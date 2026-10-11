@@ -44,8 +44,18 @@ node dist/cli.js source:approve --job $stockJobPath --fingerprint <basisFingerpr
 
 이미 로그인된 전용 Chrome 프로필의 루프백 CDP 세션을 사용합니다. 프로필을 복사하거나 로그인 보안을 우회하지 않습니다. `--profile`에는 그 세션을 시작한 전용 프로필의 절대경로를 지정하세요.
 
+기본 CDP 포트는 **9223**입니다. CLI는 실행 중인 Chrome에 연결합니다. 전용 프로필의 Chrome을 아래처럼 시작하고 로그인한 뒤 수집/입력을 실행하세요.
+
 ```powershell
-node dist/cli.js collect:run --job $stockJobPath --cdp http://127.0.0.1:9222 --profile C:\BlogChromeProfile
+& 'C:\Program Files\Google\Chrome\Application\chrome.exe' --remote-debugging-port=9223 --user-data-dir=C:\BlogChromeProfile
+```
+
+`--cdp`를 생략하면 `http://127.0.0.1:9223`을 사용합니다. 다른 포트가 필요하면 Chrome의 `--remote-debugging-port`와 CLI의 `--cdp` 포트를 동일하게 지정하세요. 예를 들어 9333은 `--remote-debugging-port=9333`, `--cdp http://127.0.0.1:9333`으로 설정합니다. 이미 입력을 시작한 작업을 재개할 때는 원래 CDP 주소·프로필·소유 탭을 그대로 사용해야 합니다.
+
+Chrome 136 이상은 원격 디버깅에 기본 프로필과 다른 `--user-data-dir`을 요구하므로 위 전용 프로필을 사용합니다. [Chrome 공식 안내](https://developer.chrome.com/blog/remote-debugging-port?hl=ko)
+
+```powershell
+node dist/cli.js collect:run --job $stockJobPath --cdp http://127.0.0.1:9223 --profile C:\BlogChromeProfile
 node dist/cli.js collect:check --job $stockJobPath
 node dist/cli.js render:run --job $stockJobPath
 ```
@@ -66,9 +76,9 @@ node dist/cli.js draft:check --job $stockJobPath
 ## 네이버 임시저장
 
 ```powershell
-node dist/cli.js draft:run --job $stockJobPath --cdp http://127.0.0.1:9222 --profile C:\BlogChromeProfile
+node dist/cli.js draft:run --job $stockJobPath --cdp http://127.0.0.1:9223 --profile C:\BlogChromeProfile
 # 중단된 작업만, 같은 CDP/프로필/소유 탭에서 재개합니다.
-node dist/cli.js draft:resume --job $stockJobPath --cdp http://127.0.0.1:9222 --profile C:\BlogChromeProfile
+node dist/cli.js draft:resume --job $stockJobPath --cdp http://127.0.0.1:9223 --profile C:\BlogChromeProfile
 node dist/cli.js job:status --job $stockJobPath
 ```
 

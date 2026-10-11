@@ -27,3 +27,9 @@ No reviewed financial provider/export, AI concept PNG or authenticated dedicated
 - Run a separate US symbol with SEC/official IR and a licensed quote source to check class/ADR and price-adjustment semantics.
 - Using an explicitly configured authenticated Chrome session, run draft input, save once, reopen the persisted row and compare title/body/captions/five image resources.
 - On interruption/recovery popup/save uncertainty, verify the job stops with the intended status without altering prior drafts or duplicating input.
+
+## CLI port update — 2026-10-11
+
+The default CLI CDP endpoint is now `http://127.0.0.1:9223`. An explicit `--cdp` overrides it for collection, draft input and resume. Chrome is started separately with a matching debugging port and a dedicated profile; the README includes the launch command. Existing resume checkpoints still require the original endpoint/profile/owned tab.
+
+Local verification: **22 test files / 76 tests passed**, typecheck and build passed, and the built help shows the 9223 default. Three CLI regressions check the omitted-option default, explicit alternative port forwarding and remote-endpoint rejection. They simulate collection dispatch and do not establish a live Chrome connection.

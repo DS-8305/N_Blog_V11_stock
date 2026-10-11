@@ -12,18 +12,20 @@ import {compileDraft,validateBundle} from '../editorial/compileDraft.js';
 import {atomicWriteJson} from '../state/jsonStore.js';
 import {runDraft} from '../automation/draftRunner.js';
 import {normalizeEndpoint} from '../browser/runLock.js';
+const DEFAULT_CDP_ENDPOINT='http://127.0.0.1:9223';
 export const HELP=`V11 stock blog workflow — temporary drafts only
 job:init --ticker <symbol> --market <KRX:KOSPI|KRX:KOSDAQ|NASDAQ|NYSE> [--issuer-name <name>] [--as-of-date YYYY-MM-DD --allow-historical] [--workspace-root <path>]
 source:inspect --job <absolute path>
 source:approve --job <path> --fingerprint <source fingerprint> --reviewer <name>
-collect:run --job <path> --cdp http://127.0.0.1:9222 --profile <dedicated Chrome profile path>
+collect:run --job <path> [--cdp <loopback endpoint>] --profile <dedicated Chrome profile path>
 collect:check --job <path>
 render:run --job <path>
 assets:approve --job <path> --fingerprint <image review fingerprint> --reviewer <name>
 draft:check --job <path>
-draft:run --job <path> --cdp <loopback endpoint> --profile <path>
-draft:resume --job <path> --cdp <loopback endpoint> --profile <path>
+draft:run --job <path> [--cdp <loopback endpoint>] --profile <path>
+draft:resume --job <path> [--cdp <loopback endpoint>] --profile <path>
 job:status --job <path>
+Default CDP endpoint: ${DEFAULT_CDP_ENDPOINT}; override it with --cdp.
 Exit codes: 0 success; 2 validation/failure; 3 needs_user; 4 save unconfirmed.
 Complete reviewed provider/evidence and concept PNG configuration before collection. See README.md.`;
 const knownOptions:Record<string,string[]>={help:[], 'job:init':['ticker','market','issuer-name','as-of-date','allow-historical','workspace-root','length-min','length-max','caption-placement'],'source:inspect':['job'],'source:approve':['job','fingerprint','reviewer'],'collect:run':['job','cdp','profile'],'collect:check':['job'],'render:run':['job'],'assets:approve':['job','fingerprint','reviewer'],'draft:check':['job'],'draft:run':['job','cdp','profile'],'draft:resume':['job','cdp','profile'],'job:status':['job']};
@@ -57,5 +59,5 @@ export async function runCli(argv:string[]):Promise<{exitCode:number;output:unkn
   return {exitCode:result.status==='draft_saved'?0:result.status==='draft_unconfirmed'?4:result.status==='needs_user'?3:2,output:result};
  }catch(error){const code=error instanceof Error?error.message:String(error);return {exitCode:/needs_user|ENOENT|source|evidence|identity|font|provider/.test(code)?3:2,output:{status:'needs_user',code,message:code}};}
 }
-function sessionOptions(options:Record<string,string|boolean>){const profilePath=required(options,'profile');if(!isAbsolute(profilePath))throw Error('absolute_profile_path_required');return {cdpEndpoint:normalizeEndpoint(required(options,'cdp')),profilePath:resolve(profilePath)};}
+function sessionOptions(options:Record<string,string|boolean>){const profilePath=required(options,'profile');if(!isAbsolute(profilePath))throw Error('absolute_profile_path_required');return {cdpEndpoint:normalizeEndpoint(options.cdp===undefined?DEFAULT_CDP_ENDPOINT:required(options,'cdp')),profilePath:resolve(profilePath)};}
 if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href){const result=await runCli(process.argv.slice(2));process.stdout.write((typeof result.output==='string'?result.output:JSON.stringify(result.output,null,2))+'\n');process.exitCode=result.exitCode;}
