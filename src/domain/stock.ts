@@ -72,9 +72,9 @@ export function validateFacts(request:JobRequest,f:FactDocument,now=new Date()):
  if(r.periodFrom>=r.periodTo||r.periodTo!==localDate(f.range52w.asOf,f.range52w.timezone)||Math.abs((Date.parse(r.periodTo)-Date.parse(r.periodFrom))/86400000-364)>7)add('invalid_range_period');
  if(localDate(f.quote.asOf,f.quote.timezone)!==r.periodTo||localDate(f.marketCap.asOf,f.marketCap.timezone)!==r.periodTo)add('market_date_mismatch');
  if(q.kind==='delayed'&&q.delayMinutes===0||q.kind!=='delayed'&&q.delayMinutes!==0)add('quote_delay_mismatch');
- if(c.rank&&localDate(c.rank.asOf,f.marketCap.timezone)!==localDate(f.marketCap.asOf,f.marketCap.timezone))add('rank_date_mismatch');
+ if(c.rank&&(localDate(c.rank.asOf,f.marketCap.timezone)!==localDate(f.marketCap.asOf,f.marketCap.timezone)||Date.parse(c.rank.asOf)>Date.parse(f.marketCap.retrievedAt)||Date.parse(c.rank.asOf)>now.getTime()))add('rank_date_mismatch');
  if(f.marketCap.method==='derived'){
-  const d=c.derivation;if(!d||d.priceAsOf!==f.quote.asOf||d.sharesAsOf!==f.quote.asOf||Math.abs(c.amount-q.amount*d.shareCount)>Math.max(1,c.amount*1e-12))add('invalid_derived_cap');
+  const d=c.derivation;if(!d||d.priceAsOf!==f.quote.asOf||d.sharesAsOf!==f.quote.asOf||f.marketCap.asOf!==f.quote.asOf||Math.abs(c.amount-q.amount*d.shareCount)>Math.max(1,c.amount*1e-12))add('invalid_derived_cap');
  }else if(c.derivation)add('unexpected_cap_derivation');
  if([f.quote,f.range52w,f.overview,f.business,f.outlook].some(v=>v.method==='derived'))add('unsupported_derived_fact');
  const b=f.business.value,shares=b.segments.filter(s=>s.revenueShare!==undefined);

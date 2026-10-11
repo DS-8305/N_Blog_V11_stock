@@ -1,0 +1,15 @@
+# Data and publishing policy
+
+Ticker and market jointly identify the security. Keep Korean six-digit codes as strings. MIC, exchange, currency, security class and active status come from reviewed authoritative evidence. No symbol/name-only lookup is treated as verified.
+
+Every value has a source URL/name, retrieval time, source asOf timestamp, timezone, verification method and evidence IDs. Reviewed exports must include immutable hashes of the response and underlying evidence, an explicit permission basis and review identity/time. Review is an attestation by the operator, not a financial data verification service.
+
+Market facts may be at most seven calendar days behind the requested date; company facts at most 550 days. A historical request requires an explicit opt-in. Future facts and reversed periods fail. Market cap, current quote and range use the same market date. Derived cap also requires exact timestamp alignment with the quote/share count, named issued/outstanding share basis and exact arithmetic. EV/free-float values are rejected. No guessed rank: require population, rules, date, source and evidence. A rank cannot postdate retrieval.
+
+The 52-week period must span approximately 364 days (±7). Require the same MIC/currency/adjustment basis for quote and range; store intraday/close range definition and last-price/delay labels. Omit a constant-range marker; reject out-of-range quotes without clamping. Supply adjustment definitions from the actual provider, never infer them from a web page label. A closed-market source needs the last trading date, not merely the web page refresh time.
+
+Business shares require 2–4 mutually exclusive complete segments, official fiscal year/scope/source evidence and sum 100% within 0.01 percentage points. Otherwise provide names/descriptions only. Prospective check points must include positive and cautionary items, be backed by sources and be labeled as opinions. No target prices, guaranteed return or trading recommendations.
+
+The five assets are official screenshot, three deterministic cards and AI concept. AI provenance includes model, exact prompt, generation date, input hash and use rights. Review that it contains no real-company photo claim, synthetic logo, invented chart or financial data. Cards never use generative AI for numbers. Five image roles/order and every file's hash/dimensions, captions, financial identity and source fingerprints must be verified again before writing.
+
+No public Naver publishing, prior draft deletion, login/CAPTCHA bypass, spreadsheet changes or unlicensed collection. Stop on uncertain input/save; only unchanged acknowledged input can resume. A saved draft must be reopened from the persisted list and compared with the expected content. Offline simulations and live account checks must be reported separately.

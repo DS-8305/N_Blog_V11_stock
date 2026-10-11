@@ -13,8 +13,9 @@ export function marketCapSvg(f:FactDocument):string {
 export function quoteLabel(f:FactDocument):string {const q=f.quote.value;return q.kind==='close'?'최종 거래일 종가':q.kind==='delayed'?`${q.delayMinutes}분 지연 장중가`:'장중가';}
 export function priceRangeSvg(f:FactDocument):string {
  const r=f.range52w.value,q=f.quote.value,position=pricePosition(q,r),marker=position===null?text(140,660,'저가와 고가가 같아 위치 계산 생략',26):`<circle cx="${140+920*position}" cy="510" r="28" fill="#286cff"/>`;
- const body=text(100,402,'52주 저가와 고가 사이의 가격 범위예요',30,'#5b6c84')+`<rect x="140" y="498" width="920" height="24" rx="12" fill="#d6e2f5"/>${marker}`+text(140,582,'52주 저가',26)+text(140,628,money(r.low,r.currency),30)+text(770,582,'52주 고가',26)+text(770,628,money(r.high,r.currency),30)+text(140,760,`${quoteLabel(f)}: ${money(q.amount,q.currency)}`,36,'#286cff',700)+text(140,824,`기간: ${r.periodFrom} ~ ${r.periodTo}`,26)+text(140,875,`가격 기준: ${r.priceBasis} · ${r.definition==='close'?'종가 범위':'장중 범위'}`,26)+text(140,933,'이 범위만으로 미래 주가를 예측할 수는 없어요',26,'#5b6c84');
- return frame('최근 1년 가격을 읽어봐요',f.identity,body,footer(f.range52w));
+ const body=text(100,402,'52주 저가와 고가 사이의 가격 범위예요',30,'#5b6c84')+`<rect x="140" y="498" width="920" height="24" rx="12" fill="#d6e2f5"/>${marker}`+text(140,582,'52주 저가',26)+text(140,628,money(r.low,r.currency),30)+text(770,582,'52주 고가',26)+text(770,628,money(r.high,r.currency),30)+text(140,760,`${quoteLabel(f)}: ${money(q.amount,q.currency)}`,36,'#286cff',700)+text(140,824,`기간: ${r.periodFrom} ~ ${r.periodTo}`,26)+text(140,875,`가격 기준: ${r.priceBasis} · ${r.definition==='close'?'종가 범위':'장중 범위'}`,26)+text(140,916,`표시 가격 기준: ${f.quote.asOf} · ${f.quote.timezone}`,20,'#5b6c84')+text(140,959,'이 범위만으로 미래 주가를 예측할 수는 없어요',24,'#5b6c84');
+ const sourceName=f.range52w.sourceName===f.quote.sourceName?f.range52w.sourceName:`${f.range52w.sourceName} / 표시 가격: ${f.quote.sourceName}`;
+ return frame('최근 1년 가격을 읽어봐요',f.identity,body,footer({...f.range52w,sourceName}));
 }
 export function businessSvg(f:FactDocument):string {
  const b=f.business.value;let body='';for(const [i,s]of b.segments.entries()){

@@ -23,31 +23,31 @@
 ### Task 1: M0–M2 data contracts
 Files: src/domain/{stock,asset,post,job,validation,bundle}.ts, src/providers/{types,registry,reviewedFile}.ts, src/state/*.ts; tests/domain/*.test.ts.
 Interfaces: validateFacts(request, facts): ValidationIssue[]; pricePosition(quote, range): number|null; collectJob(jobPath, options): Promise<Result>.
-- [ ] Write failing tests for market/ticker/date/currency/price basis, rank and segment share evidence.
-- [ ] Implement strict runtime parsers and evidence-backed reviewed provider.
-- [ ] Run unit tests; reject absent, tampered and unlicensed data.
-- [ ] Commit the validated data contracts.
+- [x] Write failing tests for market/ticker/date/currency/price basis, rank and segment share evidence.
+- [x] Implement strict runtime parsers and evidence-backed reviewed provider.
+- [x] Run unit tests; reject absent, tampered and unlicensed data.
+- [x] Commit the validated data contracts.
 
 ### Task 2: M3–M5 image artifacts
 Files: src/browser/*.ts, src/capture/*.ts, src/render/*.ts, src/editorial/assetValidation.ts; tests/render/*.test.ts.
 Interfaces: renderJob(jobPath): Promise<Result>; validateAssets(jobPath, facts, manifest): Promise<ValidationReport>.
-- [ ] Write failing render/asset tests for exact values, five roles, hashes, PNG dimensions and provenance.
-- [ ] Reuse generic capture and browser locks, implement three deterministic SVG cards and reviewed concept image import.
-- [ ] Inspect rendered PNGs and run integrity tests.
-- [ ] Commit image pipeline.
+- [x] Write failing render/asset tests for exact values, five roles, hashes, PNG dimensions and provenance.
+- [x] Reuse generic capture and browser locks, implement three deterministic SVG cards and reviewed concept image import.
+- [x] Inspect rendered PNGs and run integrity tests.
+- [x] Commit image pipeline.
 
 ### Task 3: M6 article and safe editor input
 Files: src/editorial/{createPost,postValidation,compileDraft,loadBundle}.ts, src/automation/*.ts, src/cli/*.ts; tests/editorial and automation.
 Interfaces: createPost(request, facts, assets): PostDocument; compileDraft(jobPath,bundle,report): PreparedDraft; runDraft(jobPath,options): Promise<DraftRunResult>.
-- [ ] Write failing layout, unsupported claim, source/asset mismatch and save/restart safety tests.
-- [ ] Implement article contract and CLI; reuse V10 editor events, native captions, receipt/readback and locks.
-- [ ] Run complete suite, typecheck, build and offline CLI scenario.
-- [ ] Commit workflow and operational docs.
+- [x] Write failing layout, unsupported claim, source/asset mismatch and save/restart safety tests.
+- [x] Implement article contract and CLI; reuse V10 editor events, native captions, receipt/readback and locks.
+- [x] Run complete suite, typecheck, build and offline CLI scenario.
+- [x] Commit workflow and operational docs.
 
 ### Task 4: M7 validation and delivery
 Files: docs/validation/*.md, README.md, docs/data-policy.md.
-- [ ] Distinguish offline fixtures and actual live checks; record unavailable authenticated/provider dependencies.
-- [ ] Review full implementation, fix material findings, rerun required checks.
+- [x] Distinguish offline fixtures and actual live checks; record unavailable authenticated/provider dependencies.
+- [x] Review full implementation, fix material findings, rerun required checks.
 - [ ] Push tested commits to requested main, verify remote SHA and CI.
 
 ## Decisions

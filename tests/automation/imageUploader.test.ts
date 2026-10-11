@@ -1,0 +1,15 @@
+import { expect,it } from 'vitest';import { rm,readFile } from 'node:fs/promises';import { join } from 'node:path';import { fixtureBundle } from '../helpers/bundle.js';
+import { insertImage,pageImagePort,isEvidenceImage,type ImageObservation } from '../../src/automation/imageUploader.js';
+it('does not accept a loaded inline placeholder as an uploaded evidence image',()=>{
+ expect(isEvidenceImage('data:image/svg+xml;base64,placeholder')).toBe(false);
+ expect(isEvidenceImage('blob:https://blog.naver.com/temporary')).toBe(false);
+ expect(isEvidenceImage('https://blogfiles.pstatic.net/evidence.png?type=w1')).toBe(true);
+});
+it('uses observed image modules and their enclosing component IDs',async()=>{
+ const image={currentSrc:'https://example.com/image.png',src:'',complete:true,naturalWidth:80,naturalHeight:130};
+ const element={id:'',getAttribute:()=>null,closest:()=>({id:'component-1',getAttribute:()=>null}),querySelector:()=>image};
+ const frame={locator:(selector:string)=>{if(selector==='.se-components-wrap')return {first:()=>({isVisible:async()=>true})};expect(selector).toBe('.se-components-wrap .se-module-image');return {all:async()=>[{scrollIntoViewIfNeeded:async()=>{},evaluate:async(fn:any)=>fn(element)}]};}};
+ const observations=await pageImagePort({frames:()=>[frame]} as any).read();expect(observations[0]?.key).toBe('component-1');
+});
+it('earlier_image_cannot_confirm_next and wrong_image_position',async()=>{const b=await fixtureBundle();try{const asset=b.assets.assets[0]!,event={type:'insertImage' as const,assetId:asset.assetId,relativePath:asset.relativePath,absolutePath:join(b.jobPath,asset.relativePath)};const previous:ImageObservation={key:'previous',src:'https://example.com/previous',loaded:true,width:80,height:130};const port={read:async()=>[previous],upload:async()=>{},pause:async()=>{}};await expect(insertImage({} as any,event,asset,{port,timeoutMs:2})).rejects.toThrow('image_unconfirmed');let uploaded=false;await expect(insertImage({} as any,event,asset,{port:{...port,read:async()=>uploaded?[{...previous,key:'new'},previous]:[previous],upload:async()=>{uploaded=true;}},timeoutMs:20})).rejects.toThrow('wrong_image_position');}finally{await rm(b.root,{recursive:true,force:true});}});
+it('original_image_path_unchanged and receipt binds one new loaded block',async()=>{const b=await fixtureBundle();try{const asset=b.assets.assets[0]!,path=join(b.jobPath,asset.relativePath),bytes=await readFile(path);let uploadedPath='',done=false;const result=await insertImage({} as any,{type:'insertImage',assetId:asset.assetId,relativePath:asset.relativePath,absolutePath:path},asset,{port:{read:async()=>done?[{key:'block1',src:'https://example.com/uploaded',loaded:true,width:800,height:500}]:[],upload:async file=>{uploadedPath=file;done=true;},pause:async()=>{}},timeoutMs:20});expect(result.assetId).toBe('overview_hero');expect(result.index).toBe(0);expect(uploadedPath).toBe(path);expect(await readFile(path)).toEqual(bytes);}finally{await rm(b.root,{recursive:true,force:true});}});

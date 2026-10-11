@@ -1,0 +1,3 @@
+import { expect,it } from 'vitest';import { mkdtemp,rm } from 'node:fs/promises';import { tmpdir } from 'node:os';import { join } from 'node:path';
+import { acquireBrowserLocks } from '../../src/browser/runLock.js';
+it('lock_across_workspaces even when the same endpoint has different profiles',async()=>{const root=await mkdtemp(join(tmpdir(),'v10-lock-'));try{const release=await acquireBrowserLocks('http://127.0.0.1:9222/',join(root,'a'),join(root,'locks'));await expect(acquireBrowserLocks('http://localhost:9222',join(root,'b'),join(root,'locks'))).rejects.toThrow('session_locked');await release();const again=await acquireBrowserLocks('http://127.0.0.1:9222',join(root,'b'),join(root,'locks'));await again();}finally{await rm(root,{recursive:true,force:true});}});

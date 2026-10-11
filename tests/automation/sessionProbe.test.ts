@@ -1,0 +1,3 @@
+import { expect,it } from 'vitest';import { classifySessionEvidence,probePageSession } from '../../src/automation/sessionProbe.js';
+it('security interrupts authenticated cookies',()=>{expect(classifySessionEvidence({url:'https://blog.naver.com/',hasRequiredCookies:true,authenticatedUiVisible:false,loginFormVisible:false,securityRequirementVisible:true})).toBe('security');});
+it('probe_error_is_not_authenticated and owned_tab_closed',async()=>{await expect(probePageSession({isClosed:()=>false,context:()=>({cookies:async()=>{throw new Error('cookie_probe_failed');}})} as any)).rejects.toThrow('cookie_probe_failed');await expect(probePageSession({isClosed:()=>true} as any)).rejects.toThrow('owned_tab_closed');});

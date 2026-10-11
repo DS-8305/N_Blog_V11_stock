@@ -32,10 +32,10 @@ export class ReviewedFileProvider implements StockProvider {
  async getBusinessSegments(i:SecurityIdentity){this.assertIdentity(i);return this.facts.business;}
  async getDocument(){return this.facts;}
 }
-export async function loadReviewedProvider(jobPath:string):Promise<{provider:StockProvider;hints:SourceHints;basisFingerprint:string;providerHash:string}> {
+export async function loadReviewedProvider(jobPath:string,requireReview=true):Promise<{provider:StockProvider;hints:SourceHints;basisFingerprint:string;providerHash:string}> {
  const request=await readRequest(jobPath),inspection=await inspectSource(jobPath),{hints,basisFingerprint}=inspection;
- if(!inspection.approved)throw Error('needs_user:source_review_required');
- timestamp(hints.review.reviewedAt);if(Date.parse(hints.review.reviewedAt)>Date.now())throw Error('needs_user:future_source_review');
+ if(requireReview&&!inspection.approved)throw Error('needs_user:source_review_required');
+ if(requireReview){timestamp(hints.review.reviewedAt);if(Date.parse(hints.review.reviewedAt)>Date.now())throw Error('needs_user:future_source_review');}
  const bytes=await readFile(await jobFile(jobPath,hints.provider.relativePath)),providerHash=sha256(bytes);if(providerHash!==hints.provider.sha256)throw Error('needs_user:provider_hash_changed');
  const facts=parseFacts(JSON.parse(bytes.toString('utf8').replace(/^\uFEFF/,''))),errors=validateFacts(request,facts);
  if(errors.length)throw Error('needs_user:'+errors.map(e=>e.code).join(','));
