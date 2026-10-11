@@ -48,7 +48,7 @@ Interfaces: createPost(request, facts, assets): PostDocument; compileDraft(jobPa
 Files: docs/validation/*.md, README.md, docs/data-policy.md.
 - [x] Distinguish offline fixtures and actual live checks; record unavailable authenticated/provider dependencies.
 - [x] Review full implementation, fix material findings, rerun required checks.
-- [ ] Push tested commits to requested main, verify remote SHA and CI.
+- [x] Push tested commits to requested main, verify remote SHA and CI.
 
 ## Decisions
 The user supplied a written design and explicitly requested implementation on main; continue inline without asking them to authorize it again. The fresh target checkout provides isolation from reference and synced sources. The attachment is reference material, not authority to create another repo or change visibility. Live stock and Naver checks require real configured providers and browser sessions; report them pending if unavailable.

@@ -12,6 +12,8 @@ Code-review regressions cover: failed-lock state mutation, immutable entered job
 
 Local results: **21 test files / 73 tests passed**, TypeScript check passed, build passed and bundled CLI help passed. Three deterministic card PNGs were inspected for Korean glyphs, numeric labels, chart placement and source/date visibility. The quote source and timestamp are shown independently from the 52-week range.
 
+Delivery: implementation commit `622d99dbc286009e91d3ae471768b6a1c61b012f` was pushed to the requested `main`, and `git ls-remote` matched the local SHA. [GitHub Actions run 38129901917](https://github.com/DS-8305/N_Blog_V11_stock/actions/runs/38129901917) completed successfully, including the test suite, typecheck, build and CLI help on Windows. This CI result covers code behavior and offline fixtures; the live acceptance limits below still apply.
+
 ## Live observations and limits
 
 The user selected 삼성전기. Its [official quote page](https://www.samsungsem.com/kr/about-us/investor-relations/stock.do) identifies A009150. The [official overview](https://www.samsungsem.com/kr/about-us/company/overview.do) provides company and business context. These URLs were inspected as source candidates; no scraped quote was promoted to a verified financial artifact. The user confirmed the displayed current-price/daily-close interpretation; the implementation still requires recorded last trading date, adjustment definition, quote kind, cap basis and source permission in provider evidence.
