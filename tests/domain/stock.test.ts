@@ -1,0 +1,21 @@
+import { describe,it,expect } from 'vitest';
+import { parseFacts,validateFacts,pricePosition } from '../../src/domain/stock.js';
+import { parseJobRequest } from '../../src/domain/job.js';
+import { fixtureFacts,request } from '../fixtures/stock.js';
+const codes=(facts:unknown)=>validateFacts(parseJobRequest(request),parseFacts(facts)).map(x=>x.code);
+describe('stock financial contracts',()=>{
+ it('preserves KRX leading zeroes and verified market identity',()=>{expect(parseFacts(fixtureFacts()).identity.ticker).toBe('005930');expect(codes(fixtureFacts())).toEqual([]);});
+ it.each([['5930','KRX:KOSPI'],['005930','NASDAQ'],['005930','KRX:KOSDAQ']])('rejects symbol or exchange collision %s/%s',(ticker,market)=>{const f=fixtureFacts();Object.assign(f.identity,{ticker,market});expect(()=>{const errors=codes(f);if(errors.length)throw Error(errors.join(','));}).toThrow();});
+ it('requires a market alongside a ticker',()=>expect(()=>parseJobRequest({...request,market:undefined})).toThrow());
+ it('rejects missing source or unverified values',()=>{for(const change of [{sourceUrl:null},{status:'unverified'},{evidenceIds:[]}]){const f=fixtureFacts();Object.assign(f.quote,change);expect(()=>{const errors=codes(f);if(errors.length)throw Error(errors.join(','));}).toThrow();}});
+ it('blocks currency, exchange and adjustment mismatches',()=>{for(const change of [{currency:'USD'},{mic:'XNAS'},{priceBasis:'split_adjusted'}]){const f=fixtureFacts();Object.assign(f.range52w.value,change);expect(codes(f)).toContain('price_basis_mismatch');}});
+ it('does not clamp a quote outside the range',()=>{const f=fixtureFacts();f.quote.value.amount=110000;expect(codes(f)).toContain('quote_outside_range');expect(()=>pricePosition(f.quote.value,f.range52w.value)).toThrow('quote_outside_range');});
+ it('omits position for a constant price range',()=>{const f=fixtureFacts();f.range52w.value.low=f.range52w.value.high=75000;expect(pricePosition(f.quote.value,f.range52w.value)).toBeNull();});
+ it('calculates only a compatible bounded position',()=>{const f=fixtureFacts();expect(pricePosition(f.quote.value,f.range52w.value)).toBe(0.5);});
+ it('blocks future, reversed or stale market dates',()=>{const f=fixtureFacts();f.range52w.value.periodFrom='2027-01-01';expect(codes(f)).toContain('invalid_range_period');const old=fixtureFacts();old.quote.asOf='2026-09-01T00:00:00Z';expect(codes(old)).toContain('market_data_stale');const future=fixtureFacts();future.quote.asOf='2026-10-12T00:00:00Z';expect(codes(future)).toContain('future_fact');});
+ it('requires rank population, source, rules and date',()=>{const f=fixtureFacts();Object.assign(f.marketCap.value,{rank:{value:1}});expect(()=>parseFacts(f)).toThrow();});
+ it('rejects EV and free-float cap as company market cap',()=>{const f=fixtureFacts();Object.assign(f.marketCap.value,{kind:'enterprise_value'});expect(()=>parseFacts(f)).toThrow();});
+ it('rejects segment shares without official scope and period',()=>{const f=fixtureFacts();Object.assign(f.business.value.segments[0]!,{revenueShare:60});expect(codes(f)).toContain('revenue_basis_required');});
+ it('rejects NaN and negative financial numbers',()=>{const f=fixtureFacts();for(const amount of [NaN,Infinity,-1,0]){f.quote.value.amount=amount;expect(()=>parseFacts(f)).toThrow();}});
+ it('enforces US MIC and active security class',()=>{const f=fixtureFacts();Object.assign(f.identity,{ticker:'AAPL',market:'NASDAQ',mic:'XNAS',exchange:'NASDAQ',currency:'USD'});expect(parseFacts(f).identity.ticker).toBe('AAPL');Object.assign(f.identity,{status:'delisted'});expect(()=>parseFacts(f)).toThrow();});
+});

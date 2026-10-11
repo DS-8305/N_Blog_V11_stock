@@ -1,0 +1,9 @@
+import {mkdir,realpath} from 'node:fs/promises';
+import {join,resolve} from 'node:path';
+import {parseJobRequest,parseJobState,type JobRequest,type JobState} from '../domain/job.js';
+import {atomicWriteJson,readJson} from './jsonStore.js';
+export async function createJob(root:string,request:JobRequest):Promise<string> {request=parseJobRequest(request);const base=resolve(root);await mkdir(base,{recursive:true});const path=join(await realpath(base),request.jobId);try{await mkdir(path);}catch(e){if((e as NodeJS.ErrnoException).code==='EEXIST')throw Error('job_exists');throw e;}await mkdir(join(path,'assets'));await mkdir(join(path,'receipts'));await atomicWriteJson(join(path,'request.json'),request);await writeJobState(path,{schemaVersion:1,jobId:request.jobId,phase:'selected',lastAcknowledgedEvent:-1,saveAttempt:{status:'not_attempted'},error:null});return path;}
+export async function readRequest(path:string):Promise<JobRequest>{return parseJobRequest(await readJson(join(path,'request.json')));}
+export async function readJobState(path:string):Promise<JobState>{return parseJobState(await readJson(join(path,'state.json')));}
+export async function writeJobState(path:string,state:JobState):Promise<void>{state=parseJobState(state);if((await readRequest(path)).jobId!==state.jobId)throw Error('job_identity_mismatch');await atomicWriteJson(join(path,'state.json'),state);}
+export async function assertJobMutable(path:string):Promise<void>{const s=await readJobState(path);if(s.saveAttempt.status!=='not_attempted'||s.lastAcknowledgedEvent>=0)throw Error('needs_user:job_already_entered');}

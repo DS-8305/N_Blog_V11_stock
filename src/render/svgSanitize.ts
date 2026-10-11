@@ -1,0 +1,4 @@
+export const xml=(s:string)=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]!));
+export function lines(text:string,width:number,maxLines:number):string[]{const chars=Array.from(text),output:string[]=[];for(let n=0;n<chars.length;n+=width)output.push(chars.slice(n,n+width).join(''));if(output.length>maxLines)throw Error('needs_user:card_text_overflow');return output;}
+export function text(x:number,y:number,value:string,size=32,color='#192b47',weight=400):string {return `<text x="${x}" y="${y}" font-size="${size}" fill="${color}" font-weight="${weight}">${xml(value)}</text>`;}
+export function multiline(x:number,y:number,value:string,width:number,maxLines:number,size=30,color='#192b47'):string {return `<text x="${x}" y="${y}" font-size="${size}" fill="${color}">${lines(value,width,maxLines).map((v,i)=>`<tspan x="${x}" dy="${i===0?0:size*1.45}">${xml(v)}</tspan>`).join('')}</text>`;}
