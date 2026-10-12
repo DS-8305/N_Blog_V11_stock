@@ -53,7 +53,7 @@ async function runDraftLocked(jobPath:string,options:Omit<SessionOptions,'jobId'
   const resumePhase=state.phase;state={...state,phase:status,error:{code,message:code,resumePhase}};
   await writeJobState(jobPath,state);return {status,code,message:code};
  };
- if(report.errors.length)return fail('failed','validation_failed:'+report.errors.map(e=>e.code).join(','));
+ if(report.errors.length)return fail(report.errors.some(e=>/review/.test(e.code))?'needs_user':'failed','validation_failed:'+report.errors.map(e=>e.code).join(','));
  const draft=compileDraft(jobPath,bundle,report);
  if(state.saveAttempt.status==='confirmed'){
   const receipt=state.saveAttempt.receipt as DraftReceipt;

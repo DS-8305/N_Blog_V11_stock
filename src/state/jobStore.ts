@@ -1,4 +1,4 @@
-import {mkdir,realpath} from 'node:fs/promises';
+import {mkdir,realpath,access} from 'node:fs/promises';
 import {join,resolve} from 'node:path';
 import {parseJobRequest,parseJobState,type JobRequest,type JobState} from '../domain/job.js';
 import {atomicWriteJson,readJson} from './jsonStore.js';
@@ -6,4 +6,4 @@ export async function createJob(root:string,request:JobRequest):Promise<string> 
 export async function readRequest(path:string):Promise<JobRequest>{return parseJobRequest(await readJson(join(path,'request.json')));}
 export async function readJobState(path:string):Promise<JobState>{return parseJobState(await readJson(join(path,'state.json')));}
 export async function writeJobState(path:string,state:JobState):Promise<void>{state=parseJobState(state);if((await readRequest(path)).jobId!==state.jobId)throw Error('job_identity_mismatch');await atomicWriteJson(join(path,'state.json'),state);}
-export async function assertJobMutable(path:string):Promise<void>{const s=await readJobState(path);if(s.saveAttempt.status!=='not_attempted'||s.lastAcknowledgedEvent>=0)throw Error('needs_user:job_already_entered');}
+export async function assertJobMutable(path:string):Promise<void>{const s=await readJobState(path);if(s.saveAttempt.status!=='not_attempted'||s.lastAcknowledgedEvent>=0)throw Error('needs_user:job_already_entered');for(const name of ['input-dispatch.json','input-progress.json','input-proof.json']){try{await access(join(path,name));}catch(e){if((e as NodeJS.ErrnoException).code==='ENOENT')continue;throw e;}throw Error('needs_user:job_already_entered');}}

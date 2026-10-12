@@ -1,106 +1,109 @@
 # N_Blog_V11_stock
 
-개별 주식 소개를 위한 네이버 블로그 초안 워크플로입니다. 종목·시장 식별, 원천 증거 검증, 공식 회사 화면 캡처, 숫자 카드 3장, AI 콘셉트 이미지 1장, 초보자용 원고, SmartEditor 임시저장 재열람 검증을 지원합니다.
+회사·주식 자료 화면 5장으로 네이버 블로그 소개 초안을 준비합니다. 기본 순서는 **회사 소개 → 기업현황 → 주가 화면 → 사업분야 → 실적 자료**입니다. PNG의 원본 크기와 비율을 보존하고 SmartEditor 사진 설명칸에 캡션을 넣습니다.
 
-현재 연결된 데이터 제공자는 **검토한 파일을 가져오는 `reviewed_file` 어댑터**입니다. 티커만 넣어 실시간 시세를 자동 수집하는 서비스는 아닙니다. 이용 가능한 공식/라이선스 자료와 증거를 준비해야 합니다. AI 이미지도 모델·프롬프트·생성일·사용권을 확인한 PNG를 가져옵니다. 공급자와 브라우저 연결이 없으면 `needs_user`로 멈춥니다.
+금융 제공자는 검토한 파일을 가져오는 `reviewed_file` 어댑터입니다. 티커만으로 시세를 자동 인증하지 않습니다. 캡처와 금융 검증을 따로 준비한 뒤 원고에서 연결합니다. 사용 허용 근거·종목·기준일·가격 기준이 부족하면 `needs_user`로 중단합니다.
 
-V10의 `2b7f772bdf5817604a3019115a308d8265f962f4`에서 일반 브라우저 잠금, 캡처, 입력, 이미지 업로드와 임시저장 검증 로직을 이식했습니다. 주식 계약과 원고 검증은 새로 작성했습니다. 원본 V10과 프로젝트 `sources/`는 변경하지 않았습니다. 사용자가 지정한 기존 저장소의 공개 범위는 유지했습니다.
+## 설치
 
-## 설치와 검증
-
-Windows 11, Node >=22.12, pnpm 11.12.0, Chrome을 사용합니다. 한국어 카드에는 OS의 맑은 고딕을 참조하며 폰트를 저장소에 포함하지 않습니다.
+Windows 11, Node >=22.12, pnpm 11, Chrome을 사용합니다.
 
 ```powershell
-pnpm install
+pnpm install --frozen-lockfile
 pnpm test
 pnpm typecheck
 pnpm build
 node dist/cli.js help
 ```
 
-다른 OS에서는 Noto Sans CJK KR을 설치하거나 `NBLOG_FONT_FILE`과 `NBLOG_FONT_FAMILY`를 함께 지정하세요. 임의 폰트 파일의 재배포 대신 설치된 폰트를 사용합니다. CI는 Windows에서 실행합니다.
+제한된 Windows 실행 환경에서 임시 폴더의 파일 교체가 막히면 `TEMP`와 `TMP`를 쓰기 가능한 `.runtime/test-temp`로 지정한 뒤 테스트하세요. legacy 카드 모드는 OS 맑은 고딕 또는 `NBLOG_FONT_FILE`/`NBLOG_FONT_FAMILY`가 필요합니다.
 
-## 삼성전기 예제
-
-삼성전기 공식 주가 페이지의 종목 코드는 `009150`입니다. 보통주·상장시장 식별은 실제 제공자의 증거로 다시 확인해야 합니다. [공식 회사 소개](https://www.samsungsem.com/kr/about-us/company/overview.do), [주가정보](https://www.samsungsem.com/kr/about-us/investor-relations/stock.do)는 출처 후보입니다.
+## 작업과 캡처 설정
 
 ```powershell
 $stockJobResult = node dist/cli.js job:init --ticker 009150 --market KRX:KOSPI --issuer-name 삼성전기 | ConvertFrom-Json
 $stockJobPath = $stockJobResult.jobPath
-node dist/cli.js source:inspect --job $stockJobPath
+node dist/cli.js capture:inspect --job $stockJobPath
 ```
 
-작업 폴더에 `request.json`, `state.json`, 미확인 `provider-data.template.json`, `source-hints.json`이 생성됩니다. `provider-data.json`과 근거 파일을 [제공자 계약](docs/provider-contract.md)에 맞게 준비한 뒤 다시 검사합니다. null/미확인 값을 단순히 verified로 바꾸지 말고 실제 자료와 날짜를 대조하세요.
+`workspaces/`의 작업 폴더에 `request.json`, `state.json`, `capture-hints.json`, `source-hints.json`, `provider-data.template.json`을 만듭니다. 기본 `conditions.imageLayout`은 `stock_sources_five_v1`입니다.
+
+`capture-hints.json`의 5개 source를 실제 UI 확인 결과로 채웁니다. 초기 템플릿은 승인된 자료가 아닙니다.
+
+| 설정 | 기록할 내용 |
+|---|---|
+| url / hostname / verificationUrl | HTTPS 자료 주소, 허용 호스트, 회사·코드·거래소를 확인할 주소 |
+| identitySelector / requiredIdentityLabels | verificationUrl에서 읽는 식별 영역과 회사명·정확한 ticker·거래소 문구 |
+| selector / requiredRegionLabels | 실제 캡처 영역 하나와 반드시 보이는 문구 |
+| frame | 필요한 경우 부모 iframe selector와 실제 자료 호스트 |
+| selection | 기간/탭 버튼 selector와 문구; 클릭 뒤 활성 상태를 검사 |
+| sourceDateText / unitText / marketScope | 실제 표시된 날짜·단위·시장 범위; 미표시는 null |
+| priceBasis / selectedPeriod | 검토한 가격 기준과 `YYYY-MM-DD~YYYY-MM-DD` 기간 |
+| permission / licenseNote | 사용 허용 상태 approved, 구체적인 허용 근거와 출처 이용 조건 |
+
+회사 페이지는 `company`, 국내 네이버페이 화면은 `naverpay` 프로필을 사용합니다. 별도의 verificationUrl을 지정하면 그 페이지에서 종목 식별을 확인하고, 캡처할 회사 페이지에서도 회사명을 확인합니다. 네이버페이는 `stock.naver.com/domestic/stock/<ticker>/...`, 프레임은 검토한 `navercomp.wisereport.co.kr` 호스트와 정확한 `cmp_cd`를 검사합니다. 회사명이 같아도 코드가 다른 우선주를 허용하지 않습니다. 해외 종목은 검토한 다른 자료의 `company` 프로필을 사용하세요.
+
+회사 소개·사업분야·실적 자료의 미표시 날짜를 촬영일로 대신 인증하지 않습니다. 가격·기업현황은 날짜, 단위, 시장 범위가 금융 사실과 일치해야 합니다. KRX와 KRX+NXT는 다르게 취급합니다. '수정주가' 문구만으로 조정 정의를 추정하지 않습니다. 확인한 자료의 정의를 공급자 근거와 일치시켜야 합니다. 1년 차트의 극값으로 52주 원천 값을 대신하지 않습니다.
 
 ```powershell
-node dist/cli.js source:inspect --job $stockJobPath
-# 실제 원천 값, 이용권, 종목, 기준시점과 근거 파일을 검토한 사람이 실행합니다.
-node dist/cli.js source:approve --job $stockJobPath --fingerprint <basisFingerprint> --reviewer <검토자명>
+node dist/cli.js capture:inspect --job $stockJobPath
+node dist/cli.js capture:approve --job $stockJobPath --fingerprint <basisFingerprint> --reviewer <검토자명>
 ```
 
-`source:approve`는 자료를 자동으로 사실 인증하는 기능이 아니라 검토한 입력의 해시를 고정하는 기록입니다. 입력/출처/증거가 변경되면 승인은 무효화됩니다.
+## Chrome과 캡처
 
-## 수집·이미지·원고
-
-이미 로그인된 전용 Chrome 프로필의 루프백 CDP 세션을 사용합니다. 프로필을 복사하거나 로그인 보안을 우회하지 않습니다. `--profile`에는 그 세션을 시작한 전용 프로필의 절대경로를 지정하세요.
-
-기본 CDP 포트는 **9223**입니다. CLI는 실행 중인 Chrome에 연결합니다. 전용 프로필의 Chrome을 아래처럼 시작하고 로그인한 뒤 수집/입력을 실행하세요.
+전용 프로필로 Chrome을 시작합니다. CLI는 실행 중인 Chrome에 연결하며 로그인 보안을 우회하지 않습니다. `--profile`에는 실제 해당 세션의 전용 프로필 절대경로를 지정합니다. 기본 CDP는 **http://127.0.0.1:9223**이며 `--cdp`로 바꿀 수 있습니다.
 
 ```powershell
 & 'C:\Program Files\Google\Chrome\Application\chrome.exe' --remote-debugging-port=9223 --user-data-dir=C:\BlogChromeProfile
+node dist/cli.js capture:run --job $stockJobPath --profile C:\BlogChromeProfile
+node dist/cli.js capture:check --job $stockJobPath
 ```
 
-`--cdp`를 생략하면 `http://127.0.0.1:9223`을 사용합니다. 다른 포트가 필요하면 Chrome의 `--remote-debugging-port`와 CLI의 `--cdp` 포트를 동일하게 지정하세요. 예를 들어 9333은 `--remote-debugging-port=9333`, `--cdp http://127.0.0.1:9333`으로 설정합니다. 이미 입력을 시작한 작업을 재개할 때는 원래 CDP 주소·프로필·소유 탭을 그대로 사용해야 합니다.
+회사명·코드·시장·호스트·탭 선택·필요 문구·로딩·가림·잘림·PNG 해시를 검사합니다. 부모 프레임이 로딩 중이면 자식 DOM이 읽혀도 중단합니다. 실패한 재캡처는 이전 결과를 재사용하지 않습니다. 캡처 완료는 금융 사실 준비 완료와 별개입니다.
 
-Chrome 136 이상은 원격 디버깅에 기본 프로필과 다른 `--user-data-dir`을 요구하므로 위 전용 프로필을 사용합니다. [Chrome 공식 안내](https://developer.chrome.com/blog/remote-debugging-port?hl=ko)
+## 금융 사실과 원고 준비
+
+[제공자 계약](docs/provider-contract.md)에 따라 실제 `provider-data.json`과 근거 파일, 사용 허용 근거를 준비합니다. 템플릿의 null을 단순히 verified로 바꾸지 말고 실제 출처·날짜·수치와 대조하세요.
 
 ```powershell
-node dist/cli.js collect:run --job $stockJobPath --cdp http://127.0.0.1:9223 --profile C:\BlogChromeProfile
+node dist/cli.js source:inspect --job $stockJobPath
+node dist/cli.js source:approve --job $stockJobPath --fingerprint <financialBasisFingerprint> --reviewer <검토자명>
+node dist/cli.js collect:run --job $stockJobPath
 node dist/cli.js collect:check --job $stockJobPath
-node dist/cli.js render:run --job $stockJobPath
+node dist/cli.js post:prepare --job $stockJobPath
 ```
 
-공식 페이지는 출처 검토에서 확인한 호스트·영역·회사명과 일치해야 합니다. 다른 도메인 이동, CAPTCHA, 잘린 화면, 가려진 영역, 미완료 이미지 로딩은 중단합니다. 캡처는 원본 비율을 유지합니다. 나머지 PNG는 1200×1200입니다.
+새 모드의 `collect:run`은 금융 facts와 영수증만 준비해 브라우저가 필요 없습니다. `post:prepare`는 facts와 캡처를 대조해 `assets.json`과 `post.json`을 만들고 이미지 검토 필요(종료코드 3)를 반환합니다. source 모드에서 `render:run`을 실행하면 새 명령을 안내합니다.
 
-이미지 역할은 `overview_hero`, `market_cap_card`, `price_52w_card`, `core_business_card`, `outlook_visual` 순서로 정확히 5개입니다. 숫자는 검증된 값으로 직접 렌더링하고, 생성 이미지에는 금융 수치나 합성 기업 로고를 사용하지 않습니다. 콘셉트 PNG에는 `AI 생성 콘셉트 이미지` 라벨을 직접 추가합니다.
-
-`render:run`은 다섯 이미지와 원고를 만들고 **이미지 검토 필요(종료코드 3)**를 반환합니다. 출력한 PNG를 실제로 확인한 뒤 그 결과의 fingerprint로 승인하세요.
+PNG 5장과 캡션을 실제로 보고 이미지 fingerprint로 승인합니다. 이후 원고도 읽고 별도로 승인합니다.
 
 ```powershell
 node dist/cli.js assets:approve --job $stockJobPath --fingerprint <reviewFingerprint> --reviewer <검토자명>
+node dist/cli.js post:review-basis --job $stockJobPath
+node dist/cli.js post:approve --job $stockJobPath --fingerprint <postBasisFingerprint> --reviewer <검토자명>
 node dist/cli.js draft:check --job $stockJobPath
 ```
 
-기본 원고는 제목 후보 7개, 선택 제목 1개, 소제목 5개, 이미지 5장과 캡션, 태그 5개입니다. 본문·소제목·캡션·출처 줄을 합친 공백 포함 800–1000자를 검사합니다(제목/태그 제외). 명시적 길이 변경은 `job:init --length-min <정수> --length-max <정수>`로 지정합니다. 긴 회사/사업 설명은 잘라서 사실을 바꾸지 않고 원고 길이 검수에서 중단합니다. 필요하면 `post.json`의 설명 문장을 수정한 뒤 재검수하세요. 숫자 주장과 사실 인용은 원천 `factId`에 연결해야 합니다. 기본 캡션은 native, 대안은 `--caption-placement body`입니다.
+제목 후보 7개, 소제목 5개, 사진 설명 5개, 태그 5개를 만듭니다. 본문·소제목·캡션·출처와 줄바꿈 포함 기본 800–1000자를 검사하며 제목/태그는 제외합니다. `job:init --length-min <정수> --length-max <정수>`로 지정할 수 있습니다. 원천 사실은 자르지 않고 분량 초과를 보고합니다. `post.json`을 편집하면 다시 검토·승인해야 합니다. [원고 검토 가이드](docs/editorial-guide.md)를 참고하세요.
 
-## 네이버 임시저장
+## 임시저장과 재개
 
 ```powershell
-node dist/cli.js draft:run --job $stockJobPath --cdp http://127.0.0.1:9223 --profile C:\BlogChromeProfile
-# 중단된 작업만, 같은 CDP/프로필/소유 탭에서 재개합니다.
-node dist/cli.js draft:resume --job $stockJobPath --cdp http://127.0.0.1:9223 --profile C:\BlogChromeProfile
+node dist/cli.js draft:run --job $stockJobPath --profile C:\BlogChromeProfile
+# 중단된 작업만 같은 CDP/프로필/소유 탭에서 재개
+node dist/cli.js draft:resume --job $stockJobPath --profile C:\BlogChromeProfile
 node dist/cli.js job:status --job $stockJobPath
 ```
 
-기존 미작성 글 복구 안내나 내용이 있는 편집기는 사용자 확인이 필요합니다. 임시저장 시도는 클릭 전에 기록합니다. 결과가 불확실하면 `draft_unconfirmed`로 남기고 재저장하지 않습니다. 저장 목록에서 해당 제목을 다시 열어 본문·캡션·이미지 리소스·비율·순서를 대조해야 `draft_saved`가 됩니다. 공개 발행 명령은 없습니다.
+입력과 저장 시도는 실행 전에 기록합니다. 결과가 불확실하면 재전송/재저장하지 않습니다. 저장 목록에서 해당 글을 다시 열어 제목·본문·캡션·이미지 리소스·순서·비율을 확인해야 `draft_saved`입니다. 기존 복구 글이나 내용이 있는 편집기는 사용자 확인이 필요합니다. 공개 발행 명령은 없습니다.
 
-각 입력 이벤트도 실행 전에 기록합니다. 실행 여부를 확인할 수 없는 입력은 다시 보내지 않고 `input_dispatch_unconfirmed`로 멈춥니다. 파일을 지워 억지로 재개하지 말고 실제 편집기 내용을 확인하세요. 이미 입력하거나 저장한 작업의 수집/렌더/승인 변경은 금지됩니다. 새 데이터를 사용하려면 새 작업을 만드세요.
+입력을 시작하거나 저장한 작업은 수정/재수집/재승인하지 말고 새 작업을 만드세요. 불확실 입력 파일을 지워 강제로 재개하지 마세요. 강제 종료 후 잠금 파일은 pid·token·시작시각과 실제 프로세스/소유자를 확인한 뒤 수동 해제합니다. V10과 CDP 잠금 공간을 공유해 동시 제어를 막습니다.
 
-프로세스가 강제 종료되면 잠금 파일이 남을 수 있습니다. 자동으로 잠금을 해제하지 않습니다. 잠금 파일의 pid·token·시작시각과 실제 실행 프로세스, CDP/프로필 소유자를 대조해 작업이 종료됐음을 확인한 뒤에만 해당 잠금 파일을 수동으로 제거하세요. V10과 같은 endpoint 잠금 디렉터리를 사용해 버전 간 동시 제어도 막습니다.
+## 기존 작업 호환과 검증 범위
 
-## 출력과 현재 검증 범위
+`imageLayout` 없는 기존 작업은 `legacy_cards`입니다. 기존 이미지 역할·승인·입력 fingerprint를 유지합니다. 새 작업에서도 `job:init --image-layout legacy_cards`로 공식 화면 1장·숫자 카드 3장·AI 콘셉트 1장 방식을 선택할 수 있습니다. 이 방식은 기존 `source:approve → collect:run --profile ... → render:run → assets:approve → draft:check` 흐름과 콘셉트 provenance를 사용합니다.
 
-작업 출력은 Git 제외 `workspaces/`에 저장됩니다. 인증정보, 프로필, 원천 시세와 실제 캡처를 커밋하지 마세요.
+V10 `2b7f772bdf5817604a3019115a308d8265f962f4`에서 브라우저·캡처·입력·저장 코어를 이식했습니다. 인증정보, 금융 원천 자료, 실제 캡처와 작업 산출물은 Git 제외 `workspaces/` 또는 `.runtime/`에 보관하세요.
 
-```text
-request.json source-hints.json source-inspection.json state.json
-facts.json assets.json post.json prepared-draft.json validation-report.json
-assets/{overview_hero,market_cap_card,price_52w_card,core_business_card,outlook_visual}.png
-receipts/{source-review,official-capture,render,images,draft-save}.json
-input-progress.json input-dispatch.json input-proof.json
-collection-checkpoint-facts.json
-```
-
-종료코드: 0 성공, 2 검수/실행 실패, 3 사용자 자료·설정·검토 필요, 4 저장 불확실.
-
-오프라인 금융 검증, 실제 PNG 렌더, 캡처 준비 검사, 이미지 해시, 입력 재개, 저장 불확실 및 저장 목록 재열람 모의 테스트를 제공합니다. 실제 한국/미국 종목의 완전 수집과 네이버 계정 임시저장 인수검사는 아직 통과한 것으로 표시하지 않습니다. 자세한 결과와 필요한 연결은 [검증 기록](docs/validation/live-checks.md)에 있습니다.
+종료코드는 0 성공, 2 검수/실행 실패, 3 자료·설정·검토 필요, 4 저장 불확실입니다. 오프라인 테스트와 실제 Chrome/네이버 계정 인수검사는 구분합니다. 실제 사용권·금융 자료·브라우저 연결이 없는 예시 캡처를 승인 자산으로 쓰지 않습니다. [검증 기록](docs/validation/live-checks.md).

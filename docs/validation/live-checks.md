@@ -33,3 +33,9 @@ No reviewed financial provider/export, AI concept PNG or authenticated dedicated
 The default CLI CDP endpoint is now `http://127.0.0.1:9223`. An explicit `--cdp` overrides it for collection, draft input and resume. Chrome is started separately with a matching debugging port and a dedicated profile; the README includes the launch command. Existing resume checkpoints still require the original endpoint/profile/owned tab.
 
 Local verification: **22 test files / 76 tests passed**, typecheck and build passed, and the built help shows the 9223 default. Three CLI regressions check the omitted-option default, explicit alternative port forwarding and remote-endpoint rejection. They simulate collection dispatch and do not establish a live Chrome connection.
+
+## 2026-10-12: source screenshot workflow
+
+Offline verification: 40 test files / 130 tests pass; pnpm typecheck and pnpm build pass; built help lists capture/post commands and port 9223. Tests cover five original-ratio PNGs, permissions/configuration review, exact ticker/market/frame host, parent readiness, visible crops in tall frames, failed recapture, financial context mismatch (including KRX+NXT), manuscript review invalidation, Korean money/promotion regressions, old manuscript fingerprint, five native captions and save-once/unchanged-prefix resume simulations.
+
+Actual acceptance remains needs_user: no reviewed live financial export or screen-republication permission was supplied, and a read-only local TCP probe found no CDP listener on 127.0.0.1:9223. Design-preview captures are not approved posting assets. No actual five-screen collection, Naver draft save or saved-row reopen was performed. Required next inputs: five verified source settings with permission basis, independently reviewed financial evidence, dedicated authenticated Chrome profile with matching CDP. Then visually compare all five source PNGs/captions and save/reopen a temporary draft once. Public publishing remains disabled.

@@ -17,3 +17,7 @@ Collection, capture, render, image review and compiled draft are all bound to th
 Code-review findings were handled with targeted regressions and a fresh full-suite run. Temporary artifacts and logs are ignored; implementation/operation docs remain in Git.
 
 Confirmed receipts are checked on initial confirmation and both already-confirmed return paths. A changed body, image list, caption list or source list cannot be reported as saved just because the stored fingerprint and title match. Verified receipts are also persisted separately from state, before the confirmed state transition.
+
+## 2026-10-12: five source screenshots
+
+Optional imageLayout preserves old request fingerprints. New source roles are separate from legacy roles and all retain original ratio. capture-hints review binds permissions/configuration; capture-attempt runId prevents stale reuse after failure; manifests and receipts bind actual PNG hashes and observed source context. Financial facts remain reviewed_file input. post:prepare reconciles both sources and omits new claims from performance_context. Titles use fact-linked angles, monetary presentation preserves precision, and source manuscripts require a separate current operator review. Title/body/caption/tag changes invalidate it. An unacknowledged input dispatch also makes all jobs immutable.

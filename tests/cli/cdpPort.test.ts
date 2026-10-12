@@ -1,6 +1,9 @@
 import { beforeEach,expect,it,vi } from 'vitest';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
+import {mkdtemp} from 'node:fs/promises';
+import {createJob} from '../../src/state/jobStore.js';
+import {request} from '../fixtures/stock.js';
 
 vi.mock('../../src/collectors/collectJob.js',async importOriginal=>({
  ...await importOriginal<typeof import('../../src/collectors/collectJob.js')>(),
@@ -9,8 +12,8 @@ vi.mock('../../src/collectors/collectJob.js',async importOriginal=>({
 import { collectJob } from '../../src/collectors/collectJob.js';
 import { runCli } from '../../src/cli/main.js';
 
-const jobPath=join(tmpdir(),'stock-cli-port-job'),profilePath=join(tmpdir(),'stock-cli-port-profile');
-beforeEach(()=>vi.clearAllMocks());
+let jobPath:string;const profilePath=join(tmpdir(),'stock-cli-port-profile');
+beforeEach(async()=>{vi.clearAllMocks();jobPath=await createJob(await mkdtemp(join(tmpdir(),'stock-cli-port-')),request);});
 it('connects collection to port 9223 when --cdp is omitted',async()=>{
  const result=await runCli(['collect:run','--job',jobPath,'--profile',profilePath]);
  expect(result.exitCode).toBe(3);

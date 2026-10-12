@@ -90,3 +90,7 @@ After reviewing the actual source values and all metadata, run `source:approve -
 ## New adapters
 
 Implement every `StockProvider` method, return the same strict `VerifiedValue` contracts, and register the adapter explicitly. Require credential configuration outside Git, a lawful usage basis, original evidence with hashes and source dates; never store secrets in facts/receipts. An API's missing or blocked response is `needs_user`, never a fixture fallback. Keep market adapters independent from official-site/filing adapters so their source times and licences remain explicit.
+
+## Source screenshot mode
+
+Capture settings live in capture-hints.json, separately from source-hints.json. collect:run in stock_sources_five_v1 verifies only the reviewed financial export and writes facts/receipts; no browser is required. post:prepare combines it with a complete current capture manifest. Market overview and price history require matching date, currency unit and market scope; price history additionally needs exact provider adjustment definition and explicit period. KRX+NXT is not KRX. performance_context adds no new revenue/profit facts. Capture success without an export remains financial_source_required.

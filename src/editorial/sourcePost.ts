@@ -2,13 +2,13 @@ import type {JobRequest} from '../domain/job.js';import type {FactDocument} from
 export function createSourcePost(request:JobRequest,f:FactDocument,assets:AssetManifest):PostDocument{
  const texts=supportedClaimTexts(f),name=f.identity.issuerName,cap=texts[f.marketCap.factId]!.filter(t=>t.startsWith('시가총액')).at(-1)!,quote=texts[f.quote.factId]!.at(-1)!,range=texts[f.range52w.factId]!.at(-1)!,rank=f.marketCap.value.rank?` 시총 순위 ${numberText(f.marketCap.value.rank.value)}위 (${f.marketCap.value.rank.population}) 기준이에요.`:'';
  const paragraphs=[
- `${f.overview.value.summary} 종목 코드 ${f.identity.ticker}, 상장시장 ${f.identity.exchange}예요. 제품과 고객을 먼저 읽고, 같은 이름의 다른 주식과 구분해요.`,
- `${cap}으로 확인됐어요.${rank} 시가총액은 시장이 평가하는 주식 전체의 규모예요. 매출이나 현금 보유액과는 기준이 달라요. 기업현황의 단위와 사업 경쟁력을 함께 봐요.`,
- `${range}예요. ${quote}로 확인됐어요. 지난 가격 범위는 이미 일어난 움직임이에요. 화면의 기간과 가격 기준을 함께 읽어요. 저가나 고가에 가깝다는 이유만으로 다음 가격을 단정할 수는 없어요.`,
+ `${f.overview.value.summary} 종목 코드 ${f.identity.ticker}, 상장시장 ${f.identity.exchange}예요. 제품과 고객을 먼저 읽고 다른 주식과 구분해요.`,
+ `${cap}으로 확인됐어요.${rank} 시가총액은 시장이 평가하는 주식 전체의 규모예요. 매출이나 현금 보유액과는 기준이 달라요. 표시 단위를 함께 봐요.`,
+ `${range}예요. ${quote}로 확인됐어요. 지난 가격 범위는 이미 일어난 움직임이에요. 기간과 가격 기준도 봐요. 저가나 고가에 가깝다는 이유만으로 다음 가격을 단정할 수는 없어요.`,
  `${texts[f.business.factId]!.join(' ')} 제품 이름과 고객에게 제공하는 기능을 연결해 읽어봐요. 사업별 비중이 없다면 이름만으로 매출 기여도를 추정하지 않아요. 다음 사업보고서에서 수요와 구성 변화를 봐요.`,
- `볼 점은 ${f.outlook.value.positive.join(' ')} 유의할 점은 ${f.outlook.value.caution.join(' ')} 이는 앞으로 점검할 의견이에요. 실적 자료는 다음 발표와 비교할 출발점이에요. 사업 설명이 실적으로 이어졌는지, 수요와 경쟁 환경이 달라졌는지 살펴봐요.`,
+ `볼 점은 ${f.outlook.value.positive.join(' ')} 유의할 점은 ${f.outlook.value.caution.join(' ')} 이는 앞으로 점검할 의견이에요. 실적 자료는 다음 발표와 비교할 출발점이에요. 사업이 실적으로 이어졌는지, 수요와 경쟁 변화를 살펴봐요.`,
  ];
- const ids=[[f.overview.factId],[f.marketCap.factId],[f.range52w.factId,f.quote.factId],[f.business.factId],[f.outlook.factId]],blocks:PostBlock[]=[{kind:'paragraph',text:`${name}의 ${f.business.value.segments.map(s=>s.name).join('·')} 사업은 무엇을 제공할까요? 사업과 기업 규모, 가격 자료, 다음 확인할 점을 살펴봐요.`,factIds:[f.business.factId],claims:[]}];
+ const ids=[[f.overview.factId],[f.marketCap.factId],[f.range52w.factId,f.quote.factId],[f.business.factId],[f.outlook.factId]],blocks:PostBlock[]=[{kind:'paragraph',text:`${name}의 ${f.business.value.segments.map(s=>s.name).join('·')} 사업은 무엇을 제공할까요? 사업과 규모, 가격, 다음 볼 점을 살펴봐요.`,factIds:[f.business.factId],claims:[]}];
  for(const [i,role]of rolesFor(request).entries()){const a=assets.assets.find(a=>a.role===role);if(!a)throw Error('needs_user:five_images_required');const factIds=ids[i]!,claims=factIds.flatMap(factId=>texts[factId]!.filter(text=>paragraphs[i]!.includes(text)).map(text=>({text,factId})));if(i===1&&f.marketCap.value.rank)claims.push({factId:f.marketCap.factId,text:`시총 순위 ${numberText(f.marketCap.value.rank.value)}위 (${f.marketCap.value.rank.population})`});blocks.push({kind:'heading',text:sectionHeadings[i]!,factIds:[],claims:[]},{kind:'image',assetId:a.assetId},{kind:'caption',assetId:a.assetId,text:a.caption,factIds:a.factIds},{kind:'paragraph',text:paragraphs[i]!,factIds,claims});}
  blocks.push({kind:'source',text:sourcesText(f)});const candidates=buildTitleCandidates(f),selected=selectTitle(candidates),safeTag=name.replace(/[^\p{L}\p{N}]/gu,'');return {schemaVersion:1,jobId:request.jobId,titleCandidates:candidates.map(c=>c.text),selectedTitle:selected.text,titleFactIds:selected.factIds,blocks,tags:[safeTag,'기업소개','주식공부','시가총액','사업분석']};
 }
