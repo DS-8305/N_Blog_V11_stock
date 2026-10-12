@@ -6,9 +6,12 @@ export async function prepareBlankEditor(page:Page):Promise<void>{if(await probe
 export async function focusNormalBody(page:Page,mode:'first'|'last'|'after_quote'):Promise<void>{
  await assertNoExistingDraft(page);
  for(let attempt=0;attempt<3;attempt++){
-  const frame=await getEditorFrame(page),bodies=frame.locator(".se-component.se-text .se-module-text p.se-text-paragraph");const count=await bodies.count();
+  const frame=await getEditorFrame(page),helpClose=frame.locator('.se-help-panel.se-is-on button.se-help-panel-close-button');
+  const helpCount=await helpClose.count();if(helpCount>1)throw Error('editor_help_close_not_unique');if(helpCount===1&&await helpClose.first().isVisible())await helpClose.first().click({timeout:5000});
+  const sidebarClose=frame.locator('.se-sidebar-interaction button.se-sidebar-close-button'),sidebarCount=await sidebarClose.count();if(sidebarCount>1)throw Error('editor_sidebar_close_not_unique');if(sidebarCount===1&&await sidebarClose.first().isVisible())await sidebarClose.first().click({timeout:5000});
+  const bodies=frame.locator(".se-component.se-text .se-module-text p.se-text-paragraph");const count=await bodies.count();
   for(let n=0;n<count;n++){const body=bodies.nth(mode==='first'?n:count-1-n);if(!await body.isVisible())continue;const follows=await body.evaluate(element=>{const doc=element.ownerDocument;const anchors=[...doc.querySelectorAll('.se-components-wrap .se-quotation, .se-components-wrap .se-module-image')];const last=anchors.at(-1);return !last||Boolean(last.compareDocumentPosition(element)&Node.DOCUMENT_POSITION_FOLLOWING);});if(mode!=='first'&&!follows)continue;
-   const box=await body.boundingBox();if(!box)continue;await body.click({position:{x:Math.max(1,box.width-2),y:Math.max(1,box.height-2)}});await page.keyboard.press('End');return;
+   const box=await body.boundingBox();if(!box)continue;await body.click({position:{x:Math.max(1,box.width/2),y:Math.max(1,box.height-2)}});await page.keyboard.press('End');return;
   }
   const add=frame.getByRole('button',{name:'본문 추가',exact:true});if(await add.count()!==1)throw Error('normal_body_cursor_unconfirmed');await add.click();await page.waitForTimeout(100);
  }throw new Error('normal_body_cursor_unconfirmed');
