@@ -1,7 +1,7 @@
 import {readFile} from 'node:fs/promises';
 import {join} from 'node:path';
 import sharp from 'sharp';
-import {requiredRoles,type AssetManifest} from '../domain/asset.js';
+import {requiredRoles,type AssetManifest,type AssetRole} from '../domain/asset.js';
 import {factValues,type FactDocument} from '../domain/stock.js';
 import {issue,type ValidationReport} from '../domain/validation.js';
 import {jobFile} from '../state/paths.js';
@@ -14,7 +14,7 @@ export async function validateAssets(jobPath:string,facts:FactDocument,manifest:
  let sourceFingerprint='';try{sourceFingerprint=(await collectionCheck(jobPath)).sourceFingerprint;}catch(e){add((e as Error).message);}
  if(manifest.jobId!==facts.jobId||manifest.asOfDate!==facts.asOfDate||fingerprint(manifest.identity)!==fingerprint(facts.identity))add('asset_identity_mismatch');
  if(manifest.assets.length!==5||new Set(manifest.assets.map(a=>a.role)).size!==5||requiredRoles.some((role,i)=>manifest.assets[i]?.role!==role))add('five_ordered_asset_roles_required');
- const requiredFacts={overview_hero:[facts.overview.factId],market_cap_card:[facts.marketCap.factId],price_52w_card:[facts.quote.factId,facts.range52w.factId],core_business_card:[facts.business.factId],outlook_visual:[]} as const;
+ const requiredFacts:Partial<Record<AssetRole,readonly string[]>>={overview_hero:[facts.overview.factId],market_cap_card:[facts.marketCap.factId],price_52w_card:[facts.quote.factId,facts.range52w.factId],core_business_card:[facts.business.factId],outlook_visual:[]} as const;
  for(const a of manifest.assets){
   const path=a.assetId,expectedKind=a.role==='overview_hero'?'official_screenshot':a.role==='outlook_visual'?'ai_concept':'data_card';
   if(a.assetKind!==expectedKind)add('asset_kind_mismatch',path);
