@@ -1,3 +1,4 @@
+import {imageLayoutFor} from '../domain/imageLayout.js';
 import {join} from 'node:path';
 import {loadProvider} from '../providers/registry.js';
 import {fingerprint} from '../editorial/fingerprint.js';
@@ -23,13 +24,13 @@ export async function collectJob(jobPath:string,options?:Omit<SessionOptions,'jo
   const receipt={schemaVersion:1,jobId:request.jobId,requestFingerprint:fingerprint(request),sourceFingerprint:loaded.basisFingerprint,providerHash:loaded.providerHash,factsFingerprint:fingerprint(facts),checkedAt:new Date().toISOString(),review:loaded.hints.review};
   await atomicWriteJson(join(jobPath,'receipts','source-review.json'),receipt);
   await atomicWriteJson(join(jobPath,'collection-checkpoint-facts.json'),receipt);
-  if(!options)throw Error('needs_user:official_capture_requires_cdp');
+  if(imageLayoutFor(request)==='legacy_cards'){if(!options)throw Error('needs_user:official_capture_requires_cdp');
   const session=await (dependencies.open??openCollectionSession)({...options,jobId:request.jobId});
   try{
    const asset=await(dependencies.capture??captureOfficialSite)(jobPath,facts,loaded.hints,loaded.basisFingerprint,session);
    await collectionCheck(jobPath);
    await atomicWriteJson(join(jobPath,'assets.partial.json'),parseAssetManifest({schemaVersion:1,jobId:request.jobId,asOfDate:request.asOfDate,identity,assets:[asset]}));
-  }finally{await session.release();}
+  }finally{await session.release();}} 
   const state=await readJobState(jobPath);await writeJobState(jobPath,{...state,phase:'collected',error:null});return {status:'collected',jobId:request.jobId};
  }catch(e){const code=(e as Error).message,status=/needs_user|ENOENT|session_locked|cdp|connectOverCDP|ECONNREFUSED/.test(code)?'needs_user':'failed';if(release&&mutable){const state=await readJobState(jobPath);await writeJobState(jobPath,{...state,phase:status,error:{code,message:code,resumePhase:state.phase}});}return {status,code,message:code};}
  finally{await release?.();}

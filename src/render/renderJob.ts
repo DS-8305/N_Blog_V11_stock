@@ -1,3 +1,4 @@
+import {imageLayoutFor} from '../domain/imageLayout.js';
 import {join} from 'node:path';
 import {collectionCheck} from '../collectors/collectJob.js';
 import {readJobState,readRequest,writeJobState,assertJobMutable} from '../state/jobStore.js';
@@ -14,7 +15,7 @@ import {createPost} from '../editorial/createPost.js';
 import {captionFor} from './captions.js';
 export async function renderJob(jobPath:string):Promise<{manifest:AssetManifest;reviewFingerprint:string}>{
  const release=await acquireJobLock(jobPath);try{
-  await assertJobMutable(jobPath);await jobFile(jobPath,'assets');await jobFile(jobPath,'receipts');const {facts,sourceFingerprint}=await collectionCheck(jobPath),request=await readRequest(jobPath),{hints}=await loadProvider(jobPath);
+  await assertJobMutable(jobPath);if(imageLayoutFor(await readRequest(jobPath))==='stock_sources_five_v1')throw Error('needs_user:source_capture_mode; use capture:run and post:prepare');await jobFile(jobPath,'assets');await jobFile(jobPath,'receipts');const {facts,sourceFingerprint}=await collectionCheck(jobPath),request=await readRequest(jobPath),{hints}=await loadProvider(jobPath);
   const partial=parseAssetManifest(await readJson(join(jobPath,'assets.partial.json'))),overview=partial.assets.find(a=>a.role==='overview_hero');if(!overview)throw Error('needs_user:official_capture_required');
   // Generate concept first: missing generation evidence must not create a fake fifth image.
   const concept=await new ReviewedConceptImport(jobPath,hints.concept).generate(conceptRequest(facts.overview.value.industry,facts.business.value.segments.map(s=>s.name)));

@@ -1,3 +1,7 @@
+import {readRequest} from '../state/jobStore.js';
+import {imageLayoutFor,rolesFor,factIdsFor} from '../domain/imageLayout.js';
+import {checkCapturedSources} from '../capture/sourceCapture.js';
+import {assertCaptureFinancialContext} from './preparePost.js';
 import {readFile} from 'node:fs/promises';
 import {join} from 'node:path';
 import sharp from 'sharp';
@@ -10,6 +14,7 @@ import {fingerprint,sha256} from './fingerprint.js';
 import {collectionCheck} from '../collectors/collectJob.js';
 export function assetReviewBasis(facts:FactDocument,manifest:AssetManifest,sourceFingerprint:string):string{return fingerprint({facts,sourceFingerprint,manifest:{...manifest,assets:manifest.assets.map(({reviewStatus:_,...a})=>a)}});}
 export async function validateAssets(jobPath:string,facts:FactDocument,manifest:AssetManifest,requireReview=true):Promise<ValidationReport>{
+ if(imageLayoutFor(await readRequest(jobPath))==='stock_sources_five_v1')return validateSourceAssets(jobPath,facts,manifest,requireReview);
  const errors:ValidationReport['errors']=[],add=(code:string,path='')=>errors.push(issue(code,path)),actualHashes:Record<string,string>={};
  let sourceFingerprint='';try{sourceFingerprint=(await collectionCheck(jobPath)).sourceFingerprint;}catch(e){add((e as Error).message);}
  if(manifest.jobId!==facts.jobId||manifest.asOfDate!==facts.asOfDate||fingerprint(manifest.identity)!==fingerprint(facts.identity))add('asset_identity_mismatch');
@@ -29,5 +34,15 @@ export async function validateAssets(jobPath:string,facts:FactDocument,manifest:
  try{const a=manifest.assets.find(a=>a.role==='overview_hero'),r=await readJson(join(jobPath,'receipts','official-capture.json')) as Record<string,unknown>;if(!a||r.jobId!==facts.jobId||r.sourceFingerprint!==sourceFingerprint||r.sha256!==a.sha256||r.sourceUrl!==a.sourceUrl||r.capturedAt!==a.capturedAt)add('official_capture_receipt_mismatch');}catch{add('official_capture_receipt_required');}
  try{const r=await readJson(join(jobPath,'receipts','render.json')) as {sourceFingerprint:string;factsFingerprint:string;hashes:Record<string,string>};if(r.sourceFingerprint!==sourceFingerprint||r.factsFingerprint!==fingerprint(facts)||manifest.assets.filter(a=>a.role!=='overview_hero').some(a=>r.hashes[a.role]!==a.sha256))add('render_receipt_mismatch');}catch{add('render_receipt_required');}
  if(requireReview)try{const r=await readJson(join(jobPath,'receipts','images.json')) as Record<string,unknown>;if(r.basisFingerprint!==assetReviewBasis(facts,manifest,sourceFingerprint)||!r.reviewedBy||!r.reviewedAt)add('image_review_stale');}catch{add('image_review_required');}
+ return {errors,warnings:[],fingerprint:fingerprint({facts,manifest,actualHashes,sourceFingerprint})};
+}
+
+async function validateSourceAssets(jobPath:string,facts:FactDocument,manifest:AssetManifest,requireReview:boolean):Promise<ValidationReport>{
+ const errors:ValidationReport['errors']=[],add=(code:string,path='')=>errors.push(issue(code,path)),actualHashes:Record<string,string>={};let sourceFingerprint='';
+ try{sourceFingerprint=(await collectionCheck(jobPath)).sourceFingerprint;}catch(e){add((e as Error).message);}const request=await readRequest(jobPath);
+ if(manifest.jobId!==facts.jobId||manifest.asOfDate!==facts.asOfDate||fingerprint(manifest.identity)!==fingerprint(facts.identity))add('asset_identity_mismatch');if(manifest.assets.length!==5||rolesFor(request).some((r,i)=>manifest.assets[i]?.role!==r))add('five_ordered_asset_roles_required');
+ try{const captured=await checkCapturedSources(jobPath);assertCaptureFinancialContext(captured,facts);if(captured.basisFingerprint!==manifest.captureBasisFingerprint)add('capture_manifest_stale');for(const [i,a]of manifest.assets.entries()){const screen=captured.screens[i];if(!screen||fingerprint(a.capture)!==fingerprint(screen)||a.sourceUrl!==(screen.frameUrl??screen.parentUrl)||a.capturedAt!==screen.capturedAt||a.sha256!==screen.sha256||a.width!==screen.width||a.height!==screen.height)add('asset_capture_mismatch',a.assetId);}}catch(e){add((e as Error).message);}
+ for(const a of manifest.assets){if(a.assetKind!=='source_screenshot')add('asset_kind_mismatch',a.assetId);if(fingerprint(a.factIds)!==fingerprint(factIdsFor(a.role,facts)))add('asset_fact_binding_mismatch',a.assetId);const v=factValues(facts).find(v=>v.factId===a.factIds.at(-1))??facts.outlook;if(a.asOf!==v.asOf)add('asset_source_missing',a.assetId);if(fingerprint(a.displayContext)!==fingerprint({ticker:facts.identity.ticker,market:facts.identity.market,currency:facts.identity.currency,asOfDate:facts.asOfDate}))add('asset_display_context_mismatch',a.assetId);if(requireReview&&a.reviewStatus!=='approved')add('image_review_required',a.assetId);try{const bytes=await readFile(await jobFile(jobPath,a.relativePath)),m=await sharp(bytes).metadata();actualHashes[a.assetId]=sha256(bytes);if(a.sha256!==actualHashes[a.assetId])add('asset_hash_mismatch',a.assetId);if(m.format!=='png'||m.width!==a.width||m.height!==a.height)add('asset_metadata_mismatch',a.assetId);}catch(e){add((e as Error).message,a.assetId);}}
+ if(requireReview)try{const r=await readJson(join(jobPath,'receipts/images.json')) as Record<string,unknown>;if(r.jobId!==facts.jobId||r.basisFingerprint!==assetReviewBasis(facts,manifest,sourceFingerprint)||!r.reviewedBy||!r.reviewedAt)add('image_review_stale');}catch{add('image_review_required');}
  return {errors,warnings:[],fingerprint:fingerprint({facts,manifest,actualHashes,sourceFingerprint})};
 }

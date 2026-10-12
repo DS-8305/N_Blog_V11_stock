@@ -1,3 +1,4 @@
+import {rolesFor} from '../domain/imageLayout.js';
 import type {JobRequest} from '../domain/job.js';
 import type {FactDocument} from '../domain/stock.js';
 import {sectionHeadings,articleText,type PostDocument,type PostBlock} from '../domain/post.js';
@@ -26,7 +27,7 @@ export function createPost(request:JobRequest,f:FactDocument,assets:AssetManifes
  ];
  const ids=[[f.overview.factId],[f.marketCap.factId],[f.range52w.factId,f.quote.factId],[f.business.factId],[f.outlook.factId]];
  const blocks:PostBlock[]=[{kind:'paragraph',text:`${name} 주식이 궁금하다면 회사가 하는 일부터 차근차근 살펴봐요. 아래 수치는 표시한 기준일의 자료예요.`,factIds:[],claims:[]}];
- for(const [i,role]of requiredRoles.entries()){
+ for(const [i,role]of rolesFor(request).entries()){
   const asset=assets.assets.find(a=>a.role===role);if(!asset)throw Error('needs_user:five_images_required');
   const factIds=ids[i]!,claims=factIds.flatMap(factId=>texts[factId]!.map(text=>({text,factId})));
   blocks.push({kind:'heading',text:sectionHeadings[i]!,factIds:[],claims:[]},{kind:'image',assetId:asset.assetId},{kind:'caption',assetId:asset.assetId,text:asset.caption,factIds:asset.factIds},{kind:'paragraph',text:paragraphs[i]!,factIds,claims});

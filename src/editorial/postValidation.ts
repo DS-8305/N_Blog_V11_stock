@@ -1,3 +1,4 @@
+import {rolesFor} from '../domain/imageLayout.js';
 import {articleText,sectionHeadings,type PostDocument} from '../domain/post.js';
 import type {JobRequest} from '../domain/job.js';
 import {requiredRoles,type AssetManifest} from '../domain/asset.js';
@@ -14,10 +15,10 @@ export function validatePost(request:JobRequest,facts:FactDocument,assets:AssetM
  const headings=post.blocks.flatMap(b=>b.kind==='heading'?[b.text]:[]),images=post.blocks.filter(b=>b.kind==='image');
  if(fingerprint(headings)!==fingerprint(sectionHeadings)||images.length!==5||new Set(images.map(b=>b.assetId)).size!==5)add('five_section_layout_required');
  if(post.blocks.length!==22||post.blocks[0]?.kind!=='paragraph'||post.blocks.at(-1)?.kind!=='source')add('invalid_post_layout');
- for(const [i,role]of requiredRoles.entries()){
+ for(const [i,role]of rolesFor(request).entries()){
   const offset=1+i*4,heading=post.blocks[offset],image=post.blocks[offset+1],caption=post.blocks[offset+2],paragraph=post.blocks[offset+3],asset=assets.assets.find(a=>a.role===role);
   if(heading?.kind!=='heading'||heading.text!==sectionHeadings[i]||image?.kind!=='image'||caption?.kind!=='caption'||paragraph?.kind!=='paragraph'||!asset||image.assetId!==asset.assetId||caption.assetId!==asset.assetId||caption.text!==asset.caption||fingerprint(caption.factIds)!==fingerprint(asset.factIds))add('section_asset_order_mismatch',role);
-  if(asset&&caption?.kind==='caption'&&caption.text!==captionFor(role,facts,asset.capturedAt))add('unsupported_caption',role);
+  if(asset&&caption?.kind==='caption'&&caption.text!==captionFor(role,facts,asset.capturedAt,asset.capture))add('unsupported_caption',role);
  }
  const length=articleText(post).length,{min,max}=request.conditions.articleLength;if(length<min||length>max)add('article_length_out_of_range',String(length));
  const risky=/목표가|원금\s*보장|수익\s*보장|매수\s*(?:추천|하세요)|매도\s*(?:추천|하세요)|무조건\s*(?:상승|수익)|확실한\s*수익|급등\s*확정|대박/;
