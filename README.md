@@ -38,12 +38,26 @@ node dist/cli.js capture:inspect --job $stockJobPath
 | frame | 필요한 경우 부모 iframe selector와 실제 자료 호스트 |
 | selection | 기간/탭 버튼 selector와 문구; 클릭 뒤 활성 상태를 검사 |
 | sourceDateText / unitText / marketScope | 실제 표시된 날짜·단위·시장 범위; 미표시는 null |
-| priceBasis / selectedPeriod | 검토한 가격 기준과 `YYYY-MM-DD~YYYY-MM-DD` 기간 |
+| priceBasis / selectedPeriod | 실제 화면의 가격 기준·기간 표기 그대로(예: 원주가, 1년) |
+| financialMapping | 화면 원문과 검토한 금융 근거의 통화·시장·가격 정의·차트 기간 연결 |
 | permission / licenseNote | 사용 허용 상태 approved, 구체적인 허용 근거와 출처 이용 조건 |
 
 회사 페이지는 `company`, 국내 네이버페이 화면은 `naverpay` 프로필을 사용합니다. 별도의 verificationUrl을 지정하면 그 페이지에서 종목 식별을 확인하고, 캡처할 회사 페이지에서도 회사명을 확인합니다. 네이버페이는 `stock.naver.com/domestic/stock/<ticker>/...`, 프레임은 검토한 `navercomp.wisereport.co.kr` 호스트와 정확한 `cmp_cd`를 검사합니다. 회사명이 같아도 코드가 다른 우선주를 허용하지 않습니다. 해외 종목은 검토한 다른 자료의 `company` 프로필을 사용하세요.
 
-회사 소개·사업분야·실적 자료의 미표시 날짜를 촬영일로 대신 인증하지 않습니다. 가격·기업현황은 날짜, 단위, 시장 범위가 금융 사실과 일치해야 합니다. KRX와 KRX+NXT는 다르게 취급합니다. '수정주가' 문구만으로 조정 정의를 추정하지 않습니다. 확인한 자료의 정의를 공급자 근거와 일치시켜야 합니다. 1년 차트의 극값으로 52주 원천 값을 대신하지 않습니다.
+회사 소개·사업분야·실적 자료의 미표시 날짜를 촬영일로 대신 인증하지 않습니다. 가격·기업현황은 날짜, 단위, 시장 범위가 금융 사실과 일치해야 합니다. KRX와 KRX+NXT는 다르게 취급합니다. '수정주가' 문구만으로 조정 정의를 추정하지 않습니다. 가격 정의가 화면 문구와 다르면 financialMapping.priceBasis에 실제 제공자의 definition과 quote에 연결된 evidenceId를 기록합니다. 근거 ID와 정의가 검증된 quote와 일치해야 합니다. 1년 차트의 극값으로 52주 원천 값을 대신하지 않습니다.
+
+화면의 `억원`은 원화 단위로 읽되 원문을 보존합니다. `1년` 차트는 `financialMapping.period.kind=one_year`로 검토하며, 독립된 52주 수치의 날짜를 차트 날짜로 바꾸지 않습니다. 명시적 기간은 `{kind:'explicit',from:'YYYY-MM-DD',to:'YYYY-MM-DD'}`로 기록하고 실제 표시 기간과 대조합니다. 가격 화면 설정 예시는 아래와 같습니다. placeholder는 실제 검토한 제공자 정의와 근거 ID로 채우세요.
+
+```json
+"priceBasis": "원주가",
+"selectedPeriod": "1년",
+"financialMapping": {
+  "currency": "KRW",
+  "marketScope": "KRX",
+  "priceBasis": {"definition": "<제공자의 실제 가격 정의>", "evidenceId": "<quote 근거 ID>"},
+  "period": {"kind": "one_year"}
+}
+```
 
 ```powershell
 node dist/cli.js capture:inspect --job $stockJobPath

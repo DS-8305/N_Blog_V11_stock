@@ -3,9 +3,18 @@ import type {FactDocument} from '../domain/stock.js';import {factValues} from '.
 import {acquireJobLock} from '../browser/runLock.js';import {readRequest,readJobState,writeJobState,assertJobMutable} from '../state/jobStore.js';import {atomicWriteJson,readJson} from '../state/jsonStore.js';import {collectionCheck} from '../collectors/collectJob.js';import {checkCapturedSources} from '../capture/sourceCapture.js';import {captionFor} from '../render/captions.js';import {createPost} from './createPost.js';import {validateAssets,assetReviewBasis} from './assetValidation.js';
 export function assertCaptureFinancialContext(capture:CaptureManifest,facts:FactDocument):void{
  for(const s of capture.screens.filter(s=>s.role==='market_overview'||s.role==='price_history')){
-  const fact=s.role==='market_overview'?facts.marketCap:facts.quote,date=s.sourceDateText?.match(/\d{4}[-./]\d{2}[-./]\d{2}/)?.[0]?.replace(/[./]/g,'-'),scope=facts.identity.mic==='XKRX'?'KRX':facts.identity.exchange;
-  if(date!==localDate(fact.asOf,fact.timezone)||s.marketScope!==scope||s.unitText!==(facts.identity.currency==='KRW'?'원':facts.identity.currency))throw Error('needs_user:capture_financial_context_mismatch');
-  if(s.role==='price_history'&&(s.priceBasis!==facts.quote.value.priceBasis||s.selectedPeriod!==`${facts.range52w.value.periodFrom}~${facts.range52w.value.periodTo}`))throw Error('needs_user:capture_price_basis_or_period_mismatch');
+  const fact=s.role==='market_overview'?facts.marketCap:facts.quote,date=s.sourceDateText?.match(/\d{4}[-./]\d{2}[-./]\d{2}/)?.[0]?.replace(/[./]/g,'-'),scope=facts.identity.mic==='XKRX'?'KRX':facts.identity.exchange,mapping=s.financialMapping;
+  const unit=s.unitText?.replace(/\s+/g,''),currency=unit&&/^(?:원|천원|만원|백만원|억원|조원|KRW)$/.test(unit)?'KRW':unit&&/^(?:USD|\$|달러|천달러|백만달러)$/.test(unit)?'USD':undefined;
+  const rawScope=s.marketScope?.replace(/\s+/g,'').toUpperCase(),visibleScope=rawScope&&/KRX.*NXT|NXT.*KRX/.test(rawScope)?'KRX+NXT':rawScope==='KRX'||rawScope==='XKRX'?'KRX':rawScope==='NASDAQ'||rawScope==='NYSE'?rawScope:undefined;
+  if(date!==localDate(fact.asOf,fact.timezone)||visibleScope!==scope||currency!==facts.identity.currency||(mapping&&(mapping.currency!==currency||mapping.marketScope!==visibleScope)))throw Error('needs_user:capture_financial_context_mismatch');
+  if(s.role==='price_history'){
+   const basis=mapping?.priceBasis;
+   if(basis?basis.definition!==facts.quote.value.priceBasis||!facts.quote.evidenceIds.includes(basis.evidenceId):s.priceBasis!==facts.quote.value.priceBasis)throw Error('needs_user:capture_price_basis_or_period_mismatch');
+   const period=mapping?.period,rawPeriod=s.selectedPeriod?.replace(/\s+/g,'');
+   if(period?.kind==='one_year'){if(!rawPeriod||!/^(?:1년|1[Yy]|1year)$/i.test(rawPeriod))throw Error('needs_user:capture_price_basis_or_period_mismatch');}
+   else if(period?.kind==='explicit'){const visibleDates=rawPeriod?.match(/\d{4}[-./]\d{2}[-./]\d{2}/g)?.map(d=>d.replace(/[./]/g,'-'));if(visibleDates?.[0]!==period.from||visibleDates?.[1]!==period.to||period.from>period.to||period.to>date!)throw Error('needs_user:capture_price_basis_or_period_mismatch');}
+   else if(rawPeriod!==`${facts.range52w.value.periodFrom}~${facts.range52w.value.periodTo}`)throw Error('needs_user:capture_price_basis_or_period_mismatch');
+  }
  }
 }
 export async function preparePost(jobPath:string):Promise<{jobId:string;reviewFingerprint:string}>{const release=await acquireJobLock(jobPath);try{

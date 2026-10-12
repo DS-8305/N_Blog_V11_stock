@@ -5,8 +5,8 @@ import {assertRegionReady,inspectRegion} from './readiness.js';
 type Identity=CaptureHints['identity'];
 const includes=(text:string,label:string)=>text.replace(/\s+/g,'').includes(label.replace(/\s+/g,''));
 export function assertSourceIdentity(text:string,identity:Identity):void{
- const exchange=identity.market.split(':').at(-1)!;
- if(!includes(text,identity.issuerName)||!new RegExp(`(?<![A-Za-z0-9])${identity.ticker.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}(?![A-Za-z0-9])`).test(text)||!includes(text,exchange))throw Error('needs_user:capture_identity_mismatch');
+ const exchange=identity.market.split(':').at(-1)!,labels=exchange==='KOSPI'?['KOSPI','코스피']:exchange==='KOSDAQ'?['KOSDAQ','코스닥']:[exchange],normalized=text.toUpperCase();
+ if(!includes(text,identity.issuerName)||!new RegExp(`(?<![A-Za-z0-9.-])${identity.ticker.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}(?![A-Za-z0-9.-])`).test(text)||!labels.some(label=>includes(normalized,label)))throw Error('needs_user:capture_identity_mismatch');
 }
 export function assertSourceUrl(url:string,hint:CaptureSourceHint,identity:Identity,frame=false):void{
  const u=new URL(sourceUrl(url));if(u.hostname!==(frame?hint.frame?.hostname:hint.hostname))throw Error('needs_user:capture_host_mismatch');
@@ -27,7 +27,16 @@ export async function resolveSourceRegion(page:Page,hint:CaptureSourceHint,ident
  if(hint.profile==='company'&&!includes(await page.locator('body').innerText(),identity.issuerName))throw Error('needs_user:capture_company_missing');
  let scope:Page|import('playwright').Frame=page,frameOwner:Locator|undefined,frameUrl:string|undefined;
  if(hint.frame){frameOwner=page.locator(hint.frame.selector);if(await frameOwner.count()!==1)throw Error('needs_user:capture_frame_ambiguous');await frameOwner.scrollIntoViewIfNeeded();const frame=await (await frameOwner.elementHandle())?.contentFrame();if(!frame)throw Error('needs_user:capture_frame_unready');frameUrl=frame.url();assertSourceUrl(frameUrl,hint,identity,true);scope=frame;}
- if(hint.selection){const selected=scope.locator(hint.selection.selector);if(await selected.count()!==1||!includes(await selected.innerText(),hint.selection.expectedText))throw Error('needs_user:capture_selection_ambiguous');await selected.click();const confirmed=await selected.evaluate(e=>e.getAttribute('aria-selected')==='true'||e.getAttribute('aria-pressed')==='true'||(e instanceof HTMLInputElement&&e.checked)||e.classList.contains('active')||e.classList.contains('on'));if(!confirmed)throw Error('needs_user:capture_selection_unconfirmed');}
+ if(hint.selection){
+  const selected=scope.locator(hint.selection.selector);if(await selected.count()!==1)throw Error('needs_user:capture_selection_ambiguous');
+  const controlState=()=>selected.evaluate(e=>{
+   const input=e.tagName==='INPUT'?e as HTMLInputElement:e.tagName==='LABEL'?(e as HTMLLabelElement).control as HTMLInputElement|null:e.querySelector('input');
+   const text=[e.getAttribute('aria-label'),e.textContent,...(input?.labels?Array.from(input.labels).map(l=>l.textContent):[])].filter(Boolean).join(' ');
+   const checked=e.getAttribute('aria-selected')==='true'||e.getAttribute('aria-pressed')==='true'||e.getAttribute('aria-checked')==='true'||input?.checked===true||e.classList.contains('active')||e.classList.contains('on');
+   return {text,checked};
+  });
+  const before=await controlState();if(!includes(before.text,hint.selection.expectedText))throw Error('needs_user:capture_selection_ambiguous');if(!before.checked)await selected.click();const after=await controlState();if(!after.checked||!includes(after.text,hint.selection.expectedText))throw Error('needs_user:capture_selection_unconfirmed');
+ }
  const region=scope.locator(hint.selector);if(await region.count()!==1)throw Error('needs_user:capture_region_ambiguous');await region.waitFor({state:'visible'});const regionText=await region.innerText();
  const labels=[...hint.requiredRegionLabels,...[hint.sourceDateText,hint.unitText,hint.marketScope,hint.priceBasis,hint.selectedPeriod].filter((s):s is string=>s!==null)];if(labels.some(l=>!includes(regionText,l)))throw Error('needs_user:capture_metadata_not_visible');
  return {region,...(frameOwner?{frameOwner,frameUrl}:{}),identityText,regionText};
