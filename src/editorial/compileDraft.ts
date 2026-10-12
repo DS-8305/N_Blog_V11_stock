@@ -1,3 +1,4 @@
+import {validatePostReview} from './postReview.js';
 import {join} from 'node:path';
 import type {ValidationReport,PreparedDraft,EditorEvent} from '../domain/bundle.js';
 import type {loadBundle} from './loadBundle.js';
@@ -6,7 +7,7 @@ import {validatePost} from './postValidation.js';
 import {fingerprint} from './fingerprint.js';
 type Bundle=Awaited<ReturnType<typeof loadBundle>>;
 function bundleFingerprint(bundle:Bundle,assetFingerprint?:string):string {const assetsReport=assetFingerprint??fingerprint({facts:bundle.facts,manifest:bundle.assets,actualHashes:Object.fromEntries(bundle.assets.assets.map(a=>[a.assetId,a.sha256])),sourceFingerprint:bundle.sourceFingerprint});return fingerprint({rendererVersion:1,bundle,assetsReport});}
-export async function validateBundle(jobPath:string,bundle:Bundle):Promise<ValidationReport>{const assets=await validateAssets(jobPath,bundle.facts,bundle.assets),post=validatePost(bundle.request,bundle.facts,bundle.assets,bundle.post);return {errors:[...assets.errors,...post.errors],warnings:[...assets.warnings,...post.warnings],fingerprint:bundleFingerprint(bundle,assets.fingerprint)};}
+export async function validateBundle(jobPath:string,bundle:Bundle):Promise<ValidationReport>{const assets=await validateAssets(jobPath,bundle.facts,bundle.assets),post=validatePost(bundle.request,bundle.facts,bundle.assets,bundle.post);return {errors:[...assets.errors,...post.errors,...await validatePostReview(jobPath,bundle)],warnings:[...assets.warnings,...post.warnings],fingerprint:bundleFingerprint(bundle,assets.fingerprint)};}
 export function compileDraft(jobPath:string,bundle:Bundle,report:ValidationReport):PreparedDraft {
  if(report.errors.length)throw Error('validation_failed');if(report.fingerprint!==bundleFingerprint(bundle))throw Error('stale_validation');
  const events:EditorEvent[]=[{type:'setTitle',text:bundle.post.selectedTitle}],body:string[]=[],captions:string[]=[],sources:string[]=[],imageAssetIds:string[]=[];

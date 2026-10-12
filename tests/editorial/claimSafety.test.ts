@@ -1,0 +1,2 @@
+import {it,expect} from 'vitest';import {fixtureBundle} from '../helpers/bundle.js';import {validatePost} from '../../src/editorial/postValidation.js';
+it.each(['주가는 005930 KRW예요.','주가는 구만 원이에요.','지금 반드시 사야 하는 종목이에요.'])('blocks unsupported or promotional statement %s',async text=>{const b=await fixtureBundle(),p=b.post.blocks[0]!;if(p.kind==='paragraph')p.text+=' '+text;expect(validatePost(b.request,b.facts,b.assets,b.post).errors.map(e=>e.code)).toContain(text.includes('종목')?'investment_promotion_forbidden':'unmapped_numeric_claim');});
