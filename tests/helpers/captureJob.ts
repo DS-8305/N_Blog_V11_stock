@@ -1,0 +1,4 @@
+import {mkdtemp} from 'node:fs/promises';import {tmpdir} from 'node:os';import {join} from 'node:path';
+import {createJob} from '../../src/state/jobStore.js';import {atomicWriteJson,readJson} from '../../src/state/jsonStore.js';
+import {inspectCaptureConfig,approveCaptureConfig,captureHintsBasis} from '../../src/capture/sourceConfig.js';import {hintsFixture} from './captureHints.js';
+export async function captureJob(){const root=await mkdtemp(join(tmpdir(),'capture-source-'));const request={schemaVersion:1 as const,jobId:'capture',ticker:'009150',market:'KRX:KOSPI' as const,issuerName:'삼성전기',asOfDate:'2026-10-12',allowHistorical:false,conditions:{imageLayout:'stock_sources_five_v1' as const,articleLength:{min:800,max:1000},imageCaptionPlacement:'native' as const}};const job=await createJob(root,request),hints=hintsFixture();await atomicWriteJson(join(job,'capture-hints.json'),hints);return {job,hints};}

@@ -1,0 +1,8 @@
+import {it,expect} from 'vitest';
+import {mkdtemp} from 'node:fs/promises';import {tmpdir} from 'node:os';import {join} from 'node:path';
+import {createJob} from '../../src/state/jobStore.js';import {atomicWriteJson,readJson} from '../../src/state/jsonStore.js';
+import {inspectCaptureConfig,approveCaptureConfig,captureHintsBasis} from '../../src/capture/sourceConfig.js';import {hintsFixture} from '../helpers/captureHints.js';
+import {captureJob} from '../helpers/captureJob.js';
+
+it('requires config review and invalidates changed source selector',async()=>{const {job,hints}=await captureJob();expect((await inspectCaptureConfig(job)).issues).toContain('capture_review_required');await approveCaptureConfig(job,captureHintsBasis(hints),'tester');expect((await inspectCaptureConfig(job)).status).toBe('ready');const changed=await readJson(join(job,'capture-hints.json')) as any;changed.sources[0].selector='#changed';await atomicWriteJson(join(job,'capture-hints.json'),changed);expect((await inspectCaptureConfig(job)).issues).toContain('capture_review_stale');});
+it('blocks a different security and duplicate screens',async()=>{const {job,hints}=await captureJob();hints.identity.ticker='009155';await atomicWriteJson(join(job,'capture-hints.json'),hints);expect((await inspectCaptureConfig(job)).issues).toContain('capture_identity_mismatch');hints.identity.ticker='009150';hints.sources[1]!.url=hints.sources[0]!.url;hints.sources[1]!.selector=hints.sources[0]!.selector;await atomicWriteJson(join(job,'capture-hints.json'),hints);expect((await inspectCaptureConfig(job)).issues).toContain('duplicate_capture_region');});
