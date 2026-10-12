@@ -10,4 +10,4 @@ export function supportedClaimTexts(f:FactDocument):Record<string,string[]>{cons
  [f.quote.factId]:[...new Set([`${quoteLabel(f)} ${money(f.quote.value.amount,f.quote.value.currency)}`,`${quoteLabel(f)} ${readerMoney(f.quote.value.amount,f.quote.value.currency)}`])],
  [f.range52w.factId]:[...new Set([`52주 저가 ${money(r.low,r.currency)}, 고가 ${money(r.high,r.currency)}`,`52주 저가 ${readerMoney(r.low,r.currency)}, 고가 ${readerMoney(r.high,r.currency)}`])],
  [f.business.factId]:b.segments.map(s=>`${s.name}: ${s.description}${s.revenueShare!==undefined?` (매출 비중 ${numberText(s.revenueShare)}%)`:''}`),[f.outlook.factId]:[...f.outlook.value.positive,...f.outlook.value.caution],
- };if(f.marketCap.value.rank)result[f.marketCap.factId]!.push(`시총 순위 ${numberText(f.marketCap.value.rank.value)}위 (${f.marketCap.value.rank.population})`);return result;}
+ };if(f.outlook.value.growthImpact)result[f.outlook.factId]!.push(f.outlook.value.growthImpact);if(f.marketCap.value.rank)result[f.marketCap.factId]!.push(`시총 순위 ${numberText(f.marketCap.value.rank.value)}위 (${f.marketCap.value.rank.population})`);return result;}

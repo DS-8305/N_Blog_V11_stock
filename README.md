@@ -26,7 +26,7 @@ $stockJobPath = $stockJobResult.jobPath
 node dist/cli.js capture:inspect --job $stockJobPath
 ```
 
-`workspaces/`의 작업 폴더에 `request.json`, `state.json`, `capture-hints.json`, `source-hints.json`, `provider-data.template.json`을 만듭니다. 기본 `conditions.imageLayout`은 `stock_sources_five_v1`입니다.
+`workspaces/`의 작업 폴더에 `request.json`, `state.json`, `capture-hints.json`, `source-hints.json`, `provider-data.template.json`을 만듭니다. 기본 `conditions.imageLayout`은 `stock_sources_five_v1`이고 새 작업의 `editorialStyle`은 `reader_focused_v2`입니다. 작성일 또는 검토한 직전 거래일의 금융 자료, 차트·거래량 조사와 사업의 매출·이익 기여 가능성을 준비합니다.
 
 `capture-hints.json`의 5개 source를 실제 UI 확인 결과로 채웁니다. 초기 템플릿은 승인된 자료가 아닙니다.
 
@@ -99,7 +99,7 @@ node dist/cli.js post:approve --job $stockJobPath --fingerprint <postBasisFinger
 node dist/cli.js draft:check --job $stockJobPath
 ```
 
-제목 후보 7개, 소제목 5개, 사진 설명 5개, 태그 5개를 만듭니다. 본문·소제목·캡션·출처와 줄바꿈 포함 기본 800–1000자를 검사하며 제목/태그는 제외합니다. `job:init --length-min <정수> --length-max <정수>`로 지정할 수 있습니다. 원천 사실은 자르지 않고 분량 초과를 보고합니다. `post.json`을 편집하면 다시 검토·승인해야 합니다. [원고 검토 가이드](docs/editorial-guide.md)를 참고하세요.
+새 작업은 검증된 숫자 후킹의 제목 후보 7개, 회사 소개 세 줄, 소제목 5개, 사진 설명 5개, 태그 10개를 만듭니다. 주요 수치 → 차트·거래량 → 구체적인 사업 → 근거 있는 긍정 전망을 작성합니다. 이전 작업은 태그 5개와 기존 원고 규칙을 유지합니다. 본문·소제목·캡션·출처와 줄바꿈 포함 기본 800–1000자를 검사하며 제목/태그는 제외합니다. `job:init --length-min <정수> --length-max <정수>`로 지정할 수 있습니다. 원천 사실은 자르지 않고 분량 초과를 보고합니다. `post.json`을 편집하면 다시 검토·승인해야 합니다. [원고 검토 가이드](docs/editorial-guide.md)를 참고하세요.
 
 ## 임시저장과 재개
 

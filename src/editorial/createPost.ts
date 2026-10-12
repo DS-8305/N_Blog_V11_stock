@@ -1,4 +1,5 @@
 import {createSourcePost} from './sourcePost.js';
+import {createReaderPost} from './readerFocused.js';
 import {supportedClaimTexts} from './factPresentation.js';
 import {rolesFor,imageLayoutFor} from '../domain/imageLayout.js';
 import type {JobRequest} from '../domain/job.js';
@@ -9,9 +10,9 @@ import {money,numberText,quoteLabel} from '../render/cards.js';
 export function claimTexts(f:FactDocument):Record<string,string[]> {
  const texts=supportedClaimTexts(f);return {...texts,[f.marketCap.factId]:[texts[f.marketCap.factId]![0]!,...(f.marketCap.value.rank?[texts[f.marketCap.factId]!.at(-1)!]:[])],[f.quote.factId]:[texts[f.quote.factId]![0]!],[f.range52w.factId]:[texts[f.range52w.factId]![0]!]};
 }
-export function sourcesText(f:FactDocument):string {const names=[...new Set([f.overview,f.marketCap,f.quote,f.range52w,f.business,f.outlook].map(v=>v.sourceName))];return `자료 출처: ${names.join(' · ')} | 시세 기준 ${f.range52w.value.periodTo}`;}
+export function sourcesText(f:FactDocument):string {const names=[...new Set([f.overview,f.marketCap,f.quote,f.range52w,f.business,f.outlook,...(f.marketResearch?[f.marketResearch]:[])].map(v=>v.sourceName))];return `자료 출처: ${names.join(' · ')} | 시세 기준 ${f.range52w.value.periodTo}`;}
 export function createPost(request:JobRequest,f:FactDocument,assets:AssetManifest):PostDocument {
- if(imageLayoutFor(request)==='stock_sources_five_v1')return createSourcePost(request,f,assets);
+ if(imageLayoutFor(request)==='stock_sources_five_v1')return request.conditions.editorialStyle==='reader_focused_v2'?createReaderPost(request,f,assets):createSourcePost(request,f,assets);
  const name=f.identity.issuerName,texts=claimTexts(f),range=texts[f.range52w.factId]![0]!,quote=texts[f.quote.factId]![0]!,cap=texts[f.marketCap.factId]![0]!;
  const paragraphs=[
   `${f.overview.value.summary} 종목 코드 ${f.identity.ticker}, 상장시장 ${f.identity.exchange}를 함께 확인해요. 같은 이름이라도 주식 종류와 거래소가 다를 수 있어요.`,
