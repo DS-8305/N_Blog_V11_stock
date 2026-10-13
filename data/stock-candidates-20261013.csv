@@ -1,0 +1,946 @@
+4개 시장·지수 종목 목록 | 2026-10-13,,,,
+Codex V11_Stock 종목 후보 선정용 · 실시간 시총 데이터가 아닌 출처별 조회 스냅샷,,,,
+,,,,
+시트,종목/티커 수,기준·갱신 상태,주요 출처,비고
+KOSPI_300,300,조회 2026-10-13 / 원문 시세 기준 시각 미명시,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/,우선주 포함 · 코스피 티커/회사명 영문 제공
+KOSDAQ_10,10,2026-10-12 종가,https://stockdigging.com/ranking/kosdaq/market-cap,제공처 집계 기준에 따른 시총 상위 10개
+NASDAQ100,101,조회 2026-10-13 / 변경 공지 2026-10-09 확인,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies,"100개 기업, 복수 클래스 포함 가능"
+SP500,503,조회 2026-10-13 / 원문 최신 반영 시점 재확인,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,"500개 기업, 503개 티커"
+,,,,
+해석 시 주의사항,,,,
+① 코스피 시총 순위는 원문 페이지가 정확한 시장 시세 기준시각을 표시하지 않아 2026-10-13 장중 현재 순위라고 주장할 수 없습니다. 시가총액과 가격은 원문 스냅샷이며 재확인이 필요합니다.,,,,
+② 코스피 목록에는 우선주가 별도 종목으로 포함됩니다. 하나의 회사로 중복 계산하지 않도록 종목코드를 기준으로 처리하세요.,,,,
+③ 코스닥 시총 순위는 2026-10-12 종가 기준 공개 자료를 사용했습니다. 2026-10-13 장중 변동은 반영되지 않을 수 있습니다.,,,,
+④ 나스닥100과 S&P500은 시가총액 순위가 아니라 지수 구성종목 목록입니다. 소수의 기업은 복수 종류의 주식이 편입되어 종목코드 수가 기업 수를 초과합니다.,,,,
+"⑤ 블로그 글 발행·투자정보 이미지를 만들 때는 각 종목 최신 주가, 시가총액, 상장 상태, 지수 편입 여부와 공식 출처를 다시 검증하세요.",,,,
+⑥ 이 파일은 특정 종목의 매수/매도 추천이 아닙니다.,,,,
+코스피 시가총액 상위 300종목,,,,,,,
+조회일 2026-10-13 · 시세 기준 시각을 원문에서 확인하지 못함,,,,,,,
+,,,,,,,
+순위,종목코드,회사명(영문),주식종류,시총(억원),주가(원),시세 상태,원문 URL
+1,005930,Samsung Electronics Co Ltd,일반/기타,15397100,262000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+2,000660,SK Hynix Inc,일반/기타,11606600,1681000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+3,005935,Samsung Electronics Co Pref,우선주,1556600,194000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+4,402340,SK Square Co Ltd,일반/기타,1389700,1050000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+5,009150,Samsung Electro-Mechanics,일반/기타,1123800,1546000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+6,373220,LG Energy Solution Ltd,일반/기타,938300,401000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+7,005380,Hyundai Motor Co. Ltd.,일반/기타,656800,324500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+8,105560,KB Financial Group,일반/기타,571600,162800,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+9,207940,Samsung Biologics Co Ltd,일반/기타,564300,1219000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+10,028260,Samsung C&T Corp,일반/기타,514900,317500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+11,034020,Doosan Heavy Ind. & Const.,일반/기타,498500,78000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+12,032830,Samsung Life,일반/기타,483100,269000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+13,055550,Shinhan Financial Group,일반/기타,472300,99500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+14,012450,Hanwha Aerospace Co Ltd,일반/기타,458400,891000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+15,006400,Samsung SDI,일반/기타,439600,569000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+16,000270,Kia Corp,일반/기타,415100,106800,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+17,068270,Celltrion Inc,일반/기타,411900,179600,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+18,329180,Hyundai Heavy Industries Co Ltd,일반/기타,402900,384000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+19,086790,Hana Financial,일반/기타,340600,124300,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+20,066570,LG Electronics Inc,일반/기타,326600,200500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+21,012330,"Hyundai Mobis Co.,Ltd",일반/기타,320200,359000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+22,034730,SK Holdings Co Ltd,일반/기타,302700,555000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+23,035420,Naver Corporation,일반/기타,274800,183800,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+24,096770,SK Innovation,일반/기타,267100,160900,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+25,042700,Hanmi Semicon,일반/기타,253300,267000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+26,000810,Samsung Fire & Marine Insurance,일반/기타,243700,612000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+27,316140,Woori Financial Group Inc,일반/기타,236500,32350,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+28,298040,Hyosung Heavy Industries Corp,일반/기타,232200,2494000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+29,005490,POSCO Holdings,일반/기타,231800,306500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+30,042660,"Hanwha Ocean Co., Ltd",일반/기타,220600,72000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+31,267260,Hyundai Electric & Energy Systems Co Ltd,일반/기타,218100,606000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+32,010130,Korea Zinc Inc,일반/기타,210700,1033000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+33,138040,Meritz Financi,일반/기타,209800,127300,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+34,009540,Korea Shipbuilding & Offshore Engineering Co Ltd,일반/기타,206100,291500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+35,03473K,SK Holdings 1p Pref,우선주,205200,367500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+36,051910,LG Chemicals,일반/기타,202200,286500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+37,011200,HMM Co Ltd,일반/기타,196200,20800,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+38,010950,S-Oil Corp,일반/기타,189900,168700,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+39,015760,Korea Electric Power Corp,일반/기타,186800,29100,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+40,033780,KT&G Corp,일반/기타,184200,177400,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+41,000150,Doosan Corp.,일반/기타,182600,1342000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+42,017670,SK Telecom Co Ltd,일반/기타,179200,84100,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+43,003670,Posco Chemical Co Ltd,일반/기타,171800,193100,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+44,003550,LG Corp,일반/기타,163400,108100,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+45,010140,Samsung Heavy Industries,일반/기타,161100,18860,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+46,024110,Industrial Bank Of Korea,일반/기타,157500,19750,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+47,018260,Samsung SDS Co Ltd,일반/기타,151100,195300,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+48,272210,Hanwha Systems Co Ltd,일반/기타,143200,76600,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+49,035720,Kakao Corp,일반/기타,142100,32300,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+50,086280,Hyundai Glovis,일반/기타,137200,182900,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+51,011070,LG Innotek Co Ltd,일반/기타,135400,572000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+52,079550,LIG Nex1 Co Ltd,일반/기타,134600,616000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+53,006800,Mirae Asset Daewoo Securities Co Ltd,일반/기타,130800,29850,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+54,267250,Hyundai Heavy Industries Holdings Co Ltd,일반/기타,126800,179500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+55,030200,KT Corporation,일반/기타,124700,52100,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+56,000720,Hyundai Engineering & Construction,일반/기타,120000,107800,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+57,047810,Korea Aerospace Industries,일반/기타,118300,121400,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+58,064350,Hyundai Rotem Co,일반/기타,114800,105200,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+59,003490,Korean Air Lines Co,일반/기타,113000,30700,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+60,005830,DB Insurance Co Ltd,일반/기타,112000,186600,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+61,307950,Hyundai Autoever Corp,일반/기타,98900,360500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+62,047050,Posco International Corp,일반/기타,97300,57100,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+63,078930,GS Holdings,일반/기타,96600,104000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+64,028050,Samsung Engineering,일반/기타,94600,48250,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+65,323410,KakaoBank Corp,일반/기타,92800,19470,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+66,007660,Isupetasys,일반/기타,92100,125500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+67,010620,Hyundai Mipo Dockyard,일반/기타,88900,223000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+68,071050,Korea Investment Holdings Co,일반/기타,88900,168600,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+69,005940,NH Investment & Securities Co Ltd,일반/기타,88400,24800,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+70,003230,Sam Yang Foods,일반/기타,87400,1172000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+71,180640,Hanjinkal,일반/기타,87000,130300,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+72,259960,Krafton Inc,일반/기타,83400,186900,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+73,009830,Hanwha Solutions,일반/기타,80100,36000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+74,090430,Amorepacific Corp. (New),일반/기타,79300,135900,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+75,353200,Daeduck Electronics Co Ltd,일반/기타,77900,157700,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+76,016360,Samsung Securities,일반/기타,76500,85700,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+77,000880,Hanwha,일반/기타,76400,110100,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+78,161390,Hankook Tire Co.,일반/기타,75800,62100,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+79,006260,LS Corp,일반/기타,74200,267500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+80,021240,COWAY Co. Ltd,일반/기타,71100,101400,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+81,047040,Daewoo Engineering & Construction,일반/기타,68500,16670,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+82,352820,HYBE Co. Ltd,일반/기타,68100,163900,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+83,039490,Kiwoom,일반/기타,62900,243000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+84,032640,LG Uplus,일반/기타,61100,14400,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+85,128940,Hanmi Pharm Co Ltd,일반/기타,60900,480500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+86,005387,Hyundai Motor Co Pref,우선주,58400,170000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+87,010120,LS Electric,일반/기타,58100,195500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+88,326030,Sk Biopharmaceuticals Co Ltd,일반/기타,56900,72700,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+89,000990,DB HiTek Co Ltd,일반/기타,54600,138800,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+90,000100,Yuhan Corp.,일반/기타,53800,73100,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+91,011790,SKC Co. Ltd,일반/기타,53300,108000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+92,001440,Taihan Electric Wire Co Ltd,일반/기타,52200,28100,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+93,377300,kakaopay Corp.,일반/기타,52000,38450,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+94,175330,Jb Financial,일반/기타,51600,27850,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+95,267270,Hyundai Construction Equipment Co Ltd,일반/기타,51100,107200,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+96,241560,Doosan Bobcat Inc,일반/기타,50900,53200,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+97,000500,Gaon Cable,일반/기타,48900,295500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+98,138930,BNK Financial Group Inc,일반/기타,47500,15310,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+99,052690,KEPCO Engineering & Construction,일반/기타,46800,123000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+100,029780,Samsung Card Co. Ltd.,일반/기타,44000,41200,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/
+101,036570,NCsoft Corp,일반/기타,43200,222000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+102,018880,Hanon Systems,일반/기타,41200,4015,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+103,271560,Orion Corp,일반/기타,41200,104200,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+104,034220,LG Display,일반/기타,40800,8160,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+105,011930,Shinsung E&G Co. Ltd,일반/기타,39900,19610,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+106,051900,LG Household & Healthcare,일반/기타,39500,269500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+107,088350,Hanwha Life,일반/기타,38900,5180,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+108,103590,Iljin Electric Co,일반/기타,38800,81400,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+109,001450,Hyundai Mar&Fi,일반/기타,37400,47150,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+110,008930,Hanmi Science,일반/기타,37200,54900,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+111,004020,Hyundai Steel,일반/기타,37100,28200,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+112,005385,Hyundai Motor Co. Ltd. Pfd. Series 1,일반/기타,36600,169200,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+113,001040,CJ Corp,일반/기타,35300,130400,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+114,192820,Cosmax Inc,일반/기타,34800,306500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+115,082740,HSD Engine Co Ltd,일반/기타,34200,41050,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+116,002380,KCC Corporation,일반/기타,33900,460500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+117,012510,Douzone Bizon Co Ltd,일반/기타,33600,120000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+118,161890,Korea Kolmar,일반/기타,32400,137100,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+119,028670,Pan Ocean Co Ltd,일반/기타,32200,6030,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+120,036460,Korea Gas Corporation,일반/기타,31500,36100,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+121,111770,Youngone,일반/기타,30000,70400,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+122,014680,Hansol Chemica,일반/기타,29500,271000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+123,020150,Lotte Energy Materials Corporation,일반/기타,28900,55200,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+124,302440,SK Bioscience Co Ltd,일반/기타,28800,36750,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+125,336260,Doosan Fuel Cell Co Ltd,일반/기타,28700,43750,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+126,012750,S-1 Corp,일반/기타,28500,84200,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+127,035250,Kangwon Land,일반/기타,28400,14190,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+128,139130,Dgb Financial,일반/기타,28200,17570,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+129,383220,F&F Co Ltd,일반/기타,27800,73900,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+130,023530,Lotte Shopping,일반/기타,27600,97800,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+131,251270,Netmarble Games Corp,일반/기타,27600,33650,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+132,006360,GS Engineering & Construction,일반/기타,27200,32100,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+133,097950,CJ Cheiljedang,일반/기타,27000,183700,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+134,004170,Shinsegae,일반/기타,26800,305500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+135,085620,Mirae Asset Life Insurance Co Ltd,일반/기타,26600,20400,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+136,042670,Hyundai Doosan Infracore Co Ltd,일반/기타,26100,13800,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+137,026960,Dongsuh,일반/기타,26000,26300,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+138,375500,DL E&C Co Ltd,일반/기타,25800,67400,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+139,003690,Korean Reinsu,일반/기타,25700,14540,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+140,011780,Kumho Petro Chemical,일반/기타,25700,114700,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+141,007340,DTR Automotive,일반/기타,25500,49200,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+142,000240,Hankook Tire Worldwide,일반/기타,25300,26700,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+143,017800,Hyundai Elevator,일반/기타,25200,69900,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+144,011170,Lotte Chemical Corp,일반/기타,25100,59600,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+145,004800,Hyosung Corp,일반/기타,24800,148100,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+146,281820,KCTech Co Ltd,일반/기타,24500,124000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+147,018670,Sk Gas,일반/기타,24500,272000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+148,004370,Nongshim,일반/기타,23200,397500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+149,005850,SL Corp,일반/기타,23200,50300,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+150,112610,CS Wind Corp,일반/기타,23100,55700,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+151,009420,Hanall Biopharma,일반/기타,22300,44000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+152,229640,Ls Cable & System Asia Ltd,일반/기타,22100,73000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+153,282330,BGF Retail Co Ltd,일반/기타,21800,126400,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+154,081660,Fila Holdings Corp,일반/기타,21500,38150,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+155,007810,Korea Circuit Co. Ltd.,일반/기타,21100,88100,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+156,204320,Mando Corp,일반/기타,20900,44450,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+157,010060,OCI Co Ltd,일반/기타,20700,234000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+158,009970,Youngone Holdi,일반/기타,20200,174400,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+159,005440,Hyundai Green Food Co Ltd,일반/기타,20000,12850,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+160,002790,Amore Group,일반/기타,19800,25900,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+161,051600,Kepco Plant S&,일반/기타,19600,43550,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+162,073240,Kumho Tire,일반/기타,19500,6780,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+163,030000,Cheil Worldwide,일반/기타,19100,18820,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+164,139480,E-Mart,일반/기타,18800,70000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+165,069960,Hyundai Department,일반/기타,18700,86500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+166,089860,Lotte Rental Co Ltd,일반/기타,18700,51400,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+167,007070,Gs Retail,일반/기타,18100,21650,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+168,103140,Poongsan,일반/기타,17900,65600,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+169,004990,Lotte Corp,일반/기타,17400,22900,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+170,120110,Kolon Industries Inc,일반/기타,17300,55400,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+171,181710,Nhn Entertain,일반/기타,17300,56100,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+172,020560,Asiana Airline,일반/기타,16900,8210,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+173,001430,SeAH Bestee,일반/기타,16800,46800,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+174,322000,Hyundai Energy Solutions Co Ltd,일반/기타,16500,147300,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+175,001820,Sam Hwa Capaci,일반/기타,16200,158300,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+176,093370,Foosung,일반/기타,16100,15040,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+177,395400,SK Reit Co Ltd,일반/기타,15900,5290,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+178,023590,Daou Tech,일반/기타,15700,36450,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+179,001120,LX International Corp,일반/기타,15600,43350,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+180,475150,SK ETERNIX CO LT,일반/기타,15500,46000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+181,006040,Dongwon Ind,일반/기타,15400,34850,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+182,005070,Cosmoam&T,일반/기타,15400,46250,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+183,361610,SK IE Technology Co Ltd,일반/기타,15200,18600,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+184,000155,Doosan Pref Shs,우선주,14800,432000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+185,001525,Tongyang Inc,일반/기타,14800,7200,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+186,006280,Green Cross Corp,일반/기타,14800,129400,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+187,009155,Samsung Electro Mechanics Pref,우선주,14700,515000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+188,071970,Stx Heavy Indu,일반/기타,14500,42800,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+189,008770,Hotel Shilla,일반/기타,14400,38700,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+190,214330,Kumho HT Inc,일반/기타,14300,6870,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+191,000120,CJ Korea Express,일반/기타,13800,69300,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+192,294870,Hyundai Development Co,일반/기타,13700,21900,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+193,001800,ORION Holdings Corp,일반/기타,13600,22600,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+194,011210,Hyundai Wia,일반/기타,13500,50800,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+195,00680K,Mirae Asset Daewoo Co Ltd Pref,우선주,13200,9700,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+196,001740,SK Networks Co Ltd,일반/기타,13100,6100,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+197,097230,HJ ShipBuilding & Construction Co Ltd,일반/기타,12900,14280,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+198,082640,Tongyang Life,일반/기타,12900,8250,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+199,069620,Daewoong Pharma,일반/기타,12500,108500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+200,066575,Lg Electronics Pref,우선주,12400,72000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=2
+201,001515,SK Securities Co Ltd Preference Shares,우선주,12400,4010,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+202,330590,Lotte Reit Co Ltd,일반/기타,11700,4065,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+203,298020,Hyosung TNC Corp,일반/기타,11700,273500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+204,003160,D I Corp,일반/기타,11700,42800,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+205,012630,HDC Holdings Co Ltd,일반/기타,11600,23500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+206,006120,SK Discovery Co Ltd,일반/기타,11600,67800,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+207,192080,DoubleU Games Co Ltd,일반/기타,11300,58500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+208,030610,Kyobo Securiti,일반/기타,11200,9910,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+209,300720,Hanilcmt Co Ltd,일반/기타,11100,16050,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+210,195870,Haesung DS Co Ltd,일반/기타,11100,65300,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+211,004000,Lotte Fine Chemical Co Ltd,일반/기타,10900,42850,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+212,007310,Ottogi,일반/기타,10900,316000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+213,001720,Shinyoung Securities Co. Ltd.,일반/기타,10800,139800,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+214,008040,Sajodongaone Co Ltd,일반/기타,10600,7540,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+215,280360,Lotte Confectionery Co Ltd,일반/기타,10600,119400,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+216,000815,Samsung Fire And Marine Ins Pref,우선주,10500,390500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+217,017960,Hankuk Carbon,일반/기타,10400,20550,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+218,006340,Daewon Cable,일반/기타,10300,13370,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+219,000210,DL Holdings CO. LTD.,일반/기타,10200,48850,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+220,000080,Hite Jinro,일반/기타,10100,14770,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+221,003530,Hanwha Investment&Securities Co Ltd,일반/기타,9977,4665,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+222,003540,Daishin Sec,일반/기타,9813,25500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+223,057050,Hyundai Home Shopping Network Corp,일반/기타,9784,87300,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+224,451800,Hanwha REIT Co. Ltd.,일반/기타,9644,5370,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+225,002780,Chin Hung Int',일반/기타,9510,6540,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+226,006110,Sam-A Aluminiu,일반/기타,9467,62600,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+227,071320,Korea District Heating Corp,일반/기타,9205,79500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+228,077970,Stx Engine,일반/기타,9091,22650,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+229,091810,T'way Air Co Ltd,일반/기타,9033,2585,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+230,051915,LG Chem Ltd,일반/기타,8927,116200,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+231,285130,SK Chemicals Co Ltd,일반/기타,8922,51800,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+232,005300,Lotte Chilsung Beverage,일반/기타,8861,95500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+233,009450,Kyung Dong Navien Co Ltd,일반/기타,8860,61300,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+234,032350,Lotte Tour Dev,일반/기타,8661,10880,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+235,049770,Dongwon F & B,일반/기타,8625,44700,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+236,185750,Chong Kun Dang Pharmaceutical,일반/기타,8591,65200,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+237,000370,Hanwha General,일반/기타,8475,7330,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+238,003470,Yuanta Sec Kor,일반/기타,8382,4350,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+239,192400,Cuckoo Electronics Co Ltd,일반/기타,8360,26900,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+240,004490,Sebang Global Battery Co Ltd,일반/기타,8304,62200,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+241,079160,CJ CGV,일반/기타,8254,4985,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+242,003570,SNT Dynamics Co Ltd,일반/기타,8123,32600,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+243,071055,Korea Investment Holdings Co Ltd,일반/기타,8057,142400,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+244,248070,SoluM Co Ltd,일반/기타,7985,16700,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+245,00088K,Hanwha Corp Preferred,우선주,7743,39500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+246,365550,Esr Kendall Square Reit Co Ltd,일반/기타,7629,3100,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+247,137310,SD Biosensor Inc,일반/기타,7584,6340,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+248,499790,GS P&L CO LTD,일반/기타,7548,38150,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+249,003240,Taekwang Ind,일반/기타,7482,889000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+250,000670,YoungPoong,일반/기타,7464,40550,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+251,005690,Pharmicell,일반/기타,7440,12400,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+252,005180,Binggrae,일반/기타,7356,83200,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+253,298050,Hyosung Advanced Materials Corp,일반/기타,7274,162800,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+254,214320,Innocean Worldwide Inc,일반/기타,7244,18110,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+255,100840,SNTEnergy Co Ltd,일반/기타,7173,36300,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+256,003850,Boryung Pharm,일반/기타,7113,8420,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+257,005880,Korea Line,일반/기타,6939,2150,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+258,031820,Comtec Sys,일반/기타,6924,5720,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+259,005090,SGC Energy Co Ltd,일반/기타,6872,47700,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+260,000400,Lotte Non-Life,일반/기타,6816,2205,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+261,006345,Daewon Cable Co. Ltd. Preference Shares,우선주,6784,9960,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+262,002960,Hankook Shell Oil,일반/기타,6734,518000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+263,036530,SNT Holdings Co Ltd,일반/기타,6713,45300,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+264,293940,Shinhan Alpha REIT Co Ltd,일반/기타,6700,5540,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+265,018470,Choil Aluminum,일반/기타,6623,5230,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+266,009240,Hanssem,일반/기타,6599,39750,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+267,092220,Kec Corporation,일반/기타,6454,3215,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+268,093050,LF Corp,일반/기타,6453,24200,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+269,003090,Daewoong,일반/기타,6448,15340,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+270,064960,SNT Motiv Co Ltd,일반/기타,6423,26950,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+271,192650,DreamTech Co Ltd,일반/기타,6326,9380,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+272,001570,Kumyang,일반/기타,6320,9900,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+273,007460,Aprogen KIC Inc,일반/기타,6229,2140,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+274,268280,Miwon Specialty Chemical Co Ltd,일반/기타,6205,127600,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+275,001680,Daesang Corp,일반/기타,6178,17830,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+276,014820,Dongwon System,일반/기타,6175,21300,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+277,383800,LX Holdings Corp,일반/기타,6160,8080,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+278,002840,Miwon Commerci,일반/기타,6148,134300,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+279,336370,Solus Advanced Materials Co Ltd,일반/기타,6137,8740,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+280,069260,Huchems,일반/기타,6136,15990,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+281,453340,Hyundai Green Food Co. Ltd.,일반/기타,6108,18910,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+282,000640,Donga Socio Holdings,일반/기타,6091,94600,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+283,001060,Jw Pharmac,일반/기타,6032,26750,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+284,005390,Shinsung Tngsn,일반/기타,5892,4100,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+285,033240,Jahwa Electron,일반/기타,5779,28050,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+286,138490,Kolon Plastics,일반/기타,5700,15000,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+287,075580,Sejin Heavy Industries Co Ltd,일반/기타,5696,10020,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+288,025540,Korea Electric Terminal,일반/기타,5674,56100,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+289,006650,Korea Petro Chemical Ind,일반/기타,5651,91500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+290,002350,Nexen Tire,일반/기타,5578,5800,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+291,016380,Dongbu Steel Co Ltd,일반/기타,5565,5750,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+292,284740,Cuckoo Homesys Co Ltd,일반/기타,5538,24700,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+293,00104K,CJ Corp 4P Pref,우선주,5427,128800,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+294,058650,Seah Holdings,일반/기타,5367,127600,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+295,008060,Daeduck Co. Ltd.,일반/기타,5348,16100,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+296,003300,Hanil Cement Co Ltd,일반/기타,5343,17330,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+297,161000,Aekyung Petrochemical Co Ltd,일반/기타,5258,10890,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+298,114090,Grand Korea Leisure Co. Ltd,일반/기타,5258,8500,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+299,007700,F&F Holdings Co. Ltd,일반/기타,5212,13340,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+300,003620,KG Mobility Corp.,일반/기타,5130,2535,기준 시각 미표기,https://marketcap.company/stock-exchanges/ko-korea-stock-exchange-market-capitalization/?page=3
+코스닥 시가총액 상위 10종목,,,,,,
+2026-10-12 종가 기준 · 2026-10-13 조회,,,,,,
+,,,,,,
+순위,종목코드,종목명,시총(억원),주가(원),기준일,원문 URL
+1,196170,알테오젠,161000,230500,2026-10-12,https://stockdigging.com/ranking/kosdaq/market-cap
+2,036930,주성엔지니어링,118000,254500,2026-10-12,https://stockdigging.com/ranking/kosdaq/market-cap
+3,086520,에코프로,114000,84300,2026-10-12,https://stockdigging.com/ranking/kosdaq/market-cap
+4,247540,에코프로비엠,113000,116000,2026-10-12,https://stockdigging.com/ranking/kosdaq/market-cap
+5,277810,레인보우로보틱스,76000,392500,2026-10-12,https://stockdigging.com/ranking/kosdaq/market-cap
+6,240810,원익IPS,64000,130300,2026-10-12,https://stockdigging.com/ranking/kosdaq/market-cap
+7,039030,이오테크닉스,62000,507000,2026-10-12,https://stockdigging.com/ranking/kosdaq/market-cap
+8,058470,리노공업,60000,78600,2026-10-12,https://stockdigging.com/ranking/kosdaq/market-cap
+9,222800,심텍,60000,155300,2026-10-12,https://stockdigging.com/ranking/kosdaq/market-cap
+10,028300,HLB,59000,44350,2026-10-12,https://stockdigging.com/ranking/kosdaq/market-cap
+나스닥100 지수 편입 티커 101개,,,,,
+2026-10-13 조회 · 편입 변경은 공식 공지와 재확인 권장,,,,,
+,,,,,
+번호,티커,기업명,산업군,자료조회일,원문 URL
+1,ADBE,Adobe Inc.,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+2,AMD,Advanced Micro Devices,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+3,ABNB,Airbnb,Consumer Discretionary,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+4,ALNY,Alnylam Pharmaceuticals,Health Care,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+5,GOOGL,Alphabet Inc. (Class A),Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+6,GOOG,Alphabet Inc. (Class C),Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+7,AMZN,Amazon,Consumer Discretionary,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+8,AEP,American Electric Power,Utilities,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+9,AMGN,Amgen,Health Care,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+10,ADI,Analog Devices,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+11,AAPL,Apple Inc.,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+12,AMAT,Applied Materials,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+13,APP,AppLovin,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+14,ARM,Arm Holdings,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+15,ASML,ASML Holding,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+16,ALAB,Astera Labs,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+17,ADSK,Autodesk,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+18,ADP,Automatic Data Processing,Industrials,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+19,AXON,Axon Enterprise,Industrials,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+20,BKR,Baker Hughes,Energy,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+21,BKNG,Booking Holdings,Consumer Discretionary,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+22,AVGO,Broadcom,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+23,CDNS,Cadence Design Systems,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+24,CTAS,Cintas,Industrials,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+25,CSCO,Cisco,Telecommunications,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+26,CCEP,Coca-Cola Europacific Partners,Consumer Staples,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+27,CMCSA,Comcast,Telecommunications,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+28,CEG,Constellation Energy,Utilities,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+29,CPRT,Copart,Consumer Discretionary,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+30,CRWV,CoreWeave,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+31,COST,Costco,Consumer Discretionary,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+32,CRWD,CrowdStrike,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+33,CSX,CSX Corporation,Industrials,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+34,DDOG,Datadog,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+35,DXCM,DexCom,Health Care,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+36,FANG,Diamondback Energy,Energy,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+37,DASH,DoorDash,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+38,EXC,Exelon,Utilities,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+39,FAST,Fastenal,Industrials,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+40,FER,Ferrovial,Industrials,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+41,FTNT,Fortinet,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+42,GEHC,GE HealthCare,Health Care,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+43,GILD,Gilead Sciences,Health Care,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+44,HONA,Honeywell Aerospace,Industrials,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+45,HON,Honeywell Technologies,Industrials,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+46,IDXX,Idexx Laboratories,Health Care,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+47,INTC,Intel,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+48,INTU,Intuit,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+49,ISRG,Intuitive Surgical,Health Care,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+50,KDP,Keurig Dr Pepper,Consumer Staples,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+51,KLAC,KLA Corporation,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+52,LRCX,Lam Research,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+53,LIN,Linde plc,Basic Materials,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+54,LITE,Lumentum,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+55,MAR,Marriott International,Consumer Discretionary,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+56,MRVL,Marvell Technology,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+57,MELI,Mercado Libre,Consumer Discretionary,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+58,META,Meta Platforms,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+59,MCHP,Microchip Technology,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+60,MU,Micron Technology,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+61,MSFT,Microsoft,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+62,MSTR,MicroStrategy,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+63,MRNA,Moderna,Health Care,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+64,MDLZ,Mondelez International,Consumer Staples,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+65,MPWR,Monolithic Power Systems,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+66,MNST,Monster Beverage,Consumer Staples,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+67,NBIS,Nebius Group,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+68,NFLX,"Netflix, Inc.",Consumer Discretionary,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+69,NVDA,Nvidia,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+70,NXPI,NXP Semiconductors,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+71,ORLY,O'Reilly Automotive,Consumer Discretionary,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+72,ODFL,Old Dominion Freight Line,Industrials,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+73,PCAR,Paccar,Consumer Discretionary,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+74,PLTR,Palantir Technologies,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+75,PANW,Palo Alto Networks,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+76,PAYX,Paychex,Industrials,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+77,PYPL,PayPal,Industrials,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+78,PDD,PDD Holdings,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+79,PEP,PepsiCo,Consumer Staples,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+80,QCOM,Qualcomm,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+81,REGN,Regeneron Pharmaceuticals,Health Care,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+82,RKLB,Rocket Lab,Industrials,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+83,ROP,Roper Technologies,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+84,ROST,Ross Stores,Consumer Discretionary,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+85,SNDK,Sandisk,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+86,STX,Seagate Technology,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+87,SHOP,Shopify,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+88,SPCX,SpaceX,Telecommunications,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+89,SBUX,Starbucks,Consumer Discretionary,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+90,SNPS,Synopsys,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+91,TMUS,T-Mobile US,Telecommunications,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+92,TTWO,Take-Two Interactive,Consumer Discretionary,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+93,TER,Teradyne,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+94,TSLA,"Tesla, Inc.",Consumer Discretionary,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+95,TXN,Texas Instruments,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+96,TRI,Thomson Reuters,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+97,VRTX,Vertex Pharmaceuticals,Health Care,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+98,WMT,Walmart,Consumer Discretionary,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+99,WDC,Western Digital,Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+100,WDAY,"Workday, Inc.",Technology,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+101,XEL,Xcel Energy,Utilities,2026-10-13 조회,https://www.wikizero.net/wiki/en/List_of_NASDAQ-100_companies
+S&P 500 지수 편입 티커 503개,,,,,
+"2026-10-13 조회 · 500개 기업, 복수 클래스 포함",,,,,
+,,,,,
+번호,티커,기업명,GICS 산업군,자료조회일,원문 URL
+1,MMM,3M,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+2,AOS,A. O. Smith,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+3,ABT,Abbott Laboratories,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+4,ABBV,AbbVie,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+5,ACN,Accenture,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+6,ADBE,Adobe Inc.,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+7,AMD,Advanced Micro Devices,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+8,AES,AES Corporation,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+9,AFL,Aflac,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+10,A,Agilent Technologies,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+11,APD,Air Products,Materials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+12,ABNB,Airbnb,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+13,AKAM,Akamai Technologies,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+14,ALB,Albemarle Corporation,Materials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+15,ARE,Alexandria Real Estate Equities,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+16,ALGN,Align Technology,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+17,ALLE,Allegion,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+18,LNT,Alliant Energy,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+19,ALL,Allstate,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+20,GOOGL,Alphabet Inc. (Class A),Communication Services,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+21,GOOG,Alphabet Inc. (Class C),Communication Services,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+22,MO,Altria,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+23,AMZN,Amazon,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+24,AMCR,Amcor,Materials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+25,AEE,Ameren,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+26,AEP,American Electric Power,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+27,AXP,American Express,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+28,AIG,American International Group,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+29,AMT,American Tower,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+30,AWK,American Water Works,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+31,AMP,Ameriprise Financial,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+32,AME,Ametek,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+33,AMGN,Amgen,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+34,APH,Amphenol,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+35,ADI,Analog Devices,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+36,AON,Aon plc,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+37,APA,APA Corporation,Energy,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+38,APO,Apollo Global Management,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+39,AAPL,Apple Inc.,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+40,AMAT,Applied Materials,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+41,APP,AppLovin,Communication Services,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+42,APTV,Aptiv,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+43,ACGL,Arch Capital Group,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+44,ADM,Archer Daniels Midland,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+45,ARES,Ares Management,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+46,ANET,Arista Networks,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+47,AJG,Arthur J. Gallagher & Co.,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+48,AIZ,Assurant,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+49,T,AT&T,Communication Services,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+50,ATO,Atmos Energy,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+51,ADSK,Autodesk,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+52,ADP,Automatic Data Processing,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+53,AZO,AutoZone,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+54,AVY,Avery Dennison,Materials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+55,AXON,Axon Enterprise,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+56,BKR,Baker Hughes,Energy,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+57,BALL,Ball Corporation,Materials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+58,BAC,Bank of America,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+59,BAX,Baxter International,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+60,BDX,Becton Dickinson,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+61,BRK.B,Berkshire Hathaway,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+62,BBY,Best Buy,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+63,TECH,Bio-Techne,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+64,BIIB,Biogen,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+65,BLK,BlackRock,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+66,BX,Blackstone Inc.,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+67,XYZ,"Block, Inc.",Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+68,BE,Bloom Energy,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+69,BNY,BNY Mellon,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+70,BA,Boeing,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+71,BKNG,Booking Holdings,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+72,BSX,Boston Scientific,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+73,BMY,Bristol Myers Squibb,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+74,AVGO,Broadcom,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+75,BR,Broadridge Financial Solutions,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+76,BRO,Brown & Brown,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+77,BF.B,Brown–Forman,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+78,BG,Bunge Global,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+79,BXP,"BXP, Inc.",Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+80,CHRW,C.H. Robinson,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+81,CDNS,Cadence Design Systems,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+82,CPT,Camden Property Trust,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+83,COF,Capital One,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+84,CAH,Cardinal Health,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+85,CCL,Carnival Corporation,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+86,CARR,Carrier Global,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+87,CVNA,Carvana,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+88,CASY,Casey's,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+89,CAT,Caterpillar Inc.,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+90,CBOE,Cboe Global Markets,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+91,CBRE,CBRE Group,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+92,CDW,CDW Corporation,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+93,COR,Cencora,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+94,CNC,Centene Corporation,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+95,CNP,CenterPoint Energy,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+96,CF,CF Industries,Materials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+97,CRL,Charles River Laboratories,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+98,SCHW,Charles Schwab Corporation,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+99,CHTR,Charter Communications,Communication Services,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+100,CVX,Chevron Corporation,Energy,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+101,CMG,Chipotle Mexican Grill,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+102,CB,Chubb Limited,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+103,CHD,Church & Dwight,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+104,CIEN,Ciena,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+105,CI,Cigna,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+106,CINF,Cincinnati Financial,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+107,CTAS,Cintas,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+108,CSCO,Cisco,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+109,C,Citigroup,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+110,CFG,Citizens Financial Group,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+111,CLX,Clorox,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+112,CME,CME Group,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+113,CMS,CMS Energy,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+114,KO,Coca-Cola Company (The),Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+115,CTSH,Cognizant,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+116,COHR,Coherent Corp.,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+117,COIN,Coinbase,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+118,CL,Colgate-Palmolive,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+119,CMCSA,Comcast,Communication Services,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+120,FIX,Comfort Systems USA,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+121,COP,ConocoPhillips,Energy,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+122,ED,Consolidated Edison,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+123,STZ,Constellation Brands,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+124,CEG,Constellation Energy,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+125,COO,Cooper Companies (The),Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+126,CPRT,Copart,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+127,GLW,Corning Inc.,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+128,CPAY,Corpay,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+129,CSGP,CoStar Group,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+130,COST,Costco,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+131,CRH,CRH plc,Materials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+132,CRWD,CrowdStrike,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+133,CCI,Crown Castle,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+134,CSX,CSX Corporation,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+135,CMI,Cummins,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+136,CVS,CVS Health,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+137,DHR,Danaher Corporation,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+138,DRI,Darden Restaurants,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+139,DDOG,Datadog,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+140,DVA,DaVita,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+141,DECK,Deckers Brands,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+142,DE,Deere & Company,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+143,DELL,Dell Technologies,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+144,DAL,Delta Air Lines,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+145,DVN,Devon Energy,Energy,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+146,DXCM,Dexcom,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+147,FANG,Diamondback Energy,Energy,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+148,DLR,Digital Realty,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+149,DG,Dollar General,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+150,DLTR,Dollar Tree,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+151,D,Dominion Energy,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+152,DPZ,Domino's,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+153,DASH,DoorDash,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+154,DOV,Dover Corporation,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+155,DOW,Dow Inc.,Materials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+156,DHI,D. R. Horton,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+157,DTE,DTE Energy,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+158,DUK,Duke Energy,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+159,DD,DuPont,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+160,ETN,Eaton Corporation,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+161,EBAY,eBay Inc.,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+162,ECHO,EchoStar,Communication Services,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+163,ECL,Ecolab,Materials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+164,EIX,Edison International,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+165,EW,Edwards Lifesciences,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+166,ELV,Elevance Health,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_corp.
+167,EME,Emcor,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+168,EMR,Emerson Electric,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+169,ETR,Entergy,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+170,EOG,EOG Resources,Energy,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+171,EQT,EQT Corporation,Energy,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+172,EFX,Equifax,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+173,EQIX,Equinix,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+174,ERIE,Erie Indemnity,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+175,ESS,Essex Property Trust,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+176,EL,Estée Lauder Companies (The),Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+177,EG,Everest Group,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+178,EVRG,Evergy,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+179,P,Everpure,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+180,ES,Eversource Energy,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+181,EXC,Exelon,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+182,EXE,Expand Energy,Energy,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+183,EXPE,Expedia Group,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+184,EXPD,Expeditors International,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+185,EXR,Extra Space Storage,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+186,XOM,ExxonMobil,Energy,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+187,FFIV,"F5, Inc.",Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+188,FDS,FactSet,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+189,FICO,Fair Isaac,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+190,FAST,Fastenal,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+191,FRT,Federal Realty Investment Trust,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+192,FDX,FedEx,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+193,FDXF,FedEx Freight,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+194,FERG,Ferguson Enterprises,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+195,FIS,Fidelity National Information Services,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+196,FITB,Fifth Third Bancorp,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+197,FSLR,First Solar,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+198,FE,FirstEnergy,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+199,FISV,Fiserv,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+200,FLEX,Flex Ltd.,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+201,F,Ford Motor Company,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+202,FTNT,Fortinet,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+203,FTV,Fortive,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+204,FOXA,Fox Corporation (Class A),Communication Services,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+205,FOX,Fox Corporation (Class B),Communication Services,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+206,BEN,Franklin Resources,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+207,FCX,Freeport-McMoRan,Materials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+208,GRMN,Garmin,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+209,IT,Gartner,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+210,GE,GE Aerospace,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+211,GEHC,GE HealthCare,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+212,GEV,GE Vernova,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+213,GEN,Gen Digital,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+214,GNRC,Generac,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+215,GD,General Dynamics,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+216,GIS,General Mills,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+217,GM,General Motors,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+218,GPC,Genuine Parts Company,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+219,GILD,Gilead Sciences,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+220,GPN,Global Payments,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+221,GL,Globe Life,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+222,GDDY,GoDaddy,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+223,GS,Goldman Sachs,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+224,HAL,Halliburton,Energy,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+225,HIG,Hartford (The),Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+226,HAS,Hasbro,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+227,HCA,HCA Healthcare,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+228,DOC,Healthpeak Properties,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+229,HSIC,Henry Schein,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+230,HSY,Hershey Company (The),Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+231,HPE,Hewlett Packard Enterprise,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+232,HLT,Hilton Worldwide,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+233,HD,Home Depot (The),Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+234,HONA,Honeywell Aerospace,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+235,HON,Honeywell Technologies,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+236,HRL,Hormel Foods,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+237,HST,Host Hotels & Resorts,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+238,HWM,Howmet Aerospace,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+239,HPQ,HP Inc.,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+240,HUBB,Hubbell Incorporated,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+241,HUM,Humana,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+242,HBAN,Huntington Bancshares,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+243,HII,Huntington Ingalls Industries,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+244,IBM,IBM,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+245,IEX,IDEX Corporation,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+246,IDXX,Idexx Laboratories,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+247,ITW,Illinois Tool Works,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+248,ILMN,"Illumina, Inc.",Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+249,INCY,Incyte,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+250,IR,Ingersoll Rand,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+251,PODD,Insulet Corporation,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+252,INTC,Intel,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+253,IBKR,Interactive Brokers,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+254,ICE,Intercontinental Exchange,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+255,IFF,International Flavors & Fragrances,Materials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+256,IP,International Paper,Materials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+257,INTU,Intuit,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+258,ISRG,Intuitive Surgical,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+259,IVZ,Invesco,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+260,INVH,Invitation Homes,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+261,IQV,IQVIA,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+262,IRM,Iron Mountain,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+263,JBHT,J.B. Hunt,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+264,JBL,Jabil,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+265,JKHY,Jack Henry & Associates,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+266,J,Jacobs Solutions,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+267,JNJ,Johnson & Johnson,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+268,JCI,Johnson Controls,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+269,JPM,JPMorgan Chase,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+270,KVUE,Kenvue,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+271,KDP,Keurig Dr Pepper,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+272,KEY,KeyCorp,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+273,KEYS,Keysight Technologies,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+274,KMB,Kimberly-Clark,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+275,KIM,Kimco Realty,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+276,KMI,Kinder Morgan,Energy,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+277,KKR,KKR & Co.,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+278,KLAC,KLA Corporation,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+279,KHC,Kraft Heinz,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+280,KR,Kroger,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+281,LHX,L3Harris,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+282,LH,Labcorp,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+283,LRCX,Lam Research,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+284,LVS,Las Vegas Sands,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+285,LDOS,Leidos,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+286,LEN,Lennar,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+287,LII,Lennox International,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+288,LLY,Lilly (Eli),Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+289,LIN,Linde plc,Materials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+290,LYV,Live Nation Entertainment,Communication Services,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+291,LMT,Lockheed Martin,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+292,L,Loews Corporation,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+293,LOW,Lowe's,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+294,LULU,Lululemon Athletica,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+295,LITE,Lumentum,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+296,LYB,LyondellBasell,Materials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+297,MTB,M&T Bank,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+298,MPC,Marathon Petroleum,Energy,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+299,MAR,Marriott International,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+300,MRSH,Marsh McLennan,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+301,MLM,Martin Marietta Materials,Materials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+302,MRVL,Marvell Technology,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+303,MAS,Masco,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+304,MA,Mastercard,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+305,MKC,McCormick & Company,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+306,MCD,McDonald's,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+307,MCK,McKesson Corporation,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+308,MDT,Medtronic,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+309,MRK,Merck & Co.,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+310,META,Meta Platforms,Communication Services,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+311,MET,MetLife,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+312,MTD,Mettler Toledo,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+313,MGM,MGM Resorts,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+314,MCHP,Microchip Technology,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+315,MU,Micron Technology,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+316,MSFT,Microsoft,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+317,MAA,Mid-America Apartment Communities,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+318,MRNA,Moderna,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+319,MDLZ,Mondelez International,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+320,MPWR,Monolithic Power Systems,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+321,MNST,Monster Beverage,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+322,MCO,Moody's Corporation,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+323,MS,Morgan Stanley,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+324,MOS,Mosaic Company (The),Materials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+325,MSI,Motorola Solutions,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+326,MSCI,MSCI,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+327,NDAQ,"Nasdaq, Inc.",Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+328,NTAP,NetApp,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+329,NFLX,Netflix,Communication Services,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+330,NEM,Newmont,Materials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+331,NWSA,News Corp (Class A),Communication Services,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+332,NWS,News Corp (Class B),Communication Services,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+333,NEE,NextEra Energy,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+334,NKE,"Nike, Inc.",Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+335,NI,NiSource,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+336,NDSN,Nordson Corporation,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+337,NSC,Norfolk Southern,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+338,NTRS,Northern Trust,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+339,NOC,Northrop Grumman,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+340,NCLH,Norwegian Cruise Line Holdings,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+341,NRG,NRG Energy,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+342,NUE,Nucor,Materials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+343,NVDA,Nvidia,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+344,NVR,"NVR, Inc.",Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+345,NXPI,NXP Semiconductors,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+346,ORLY,O'Reilly Automotive,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+347,OXY,Occidental Petroleum,Energy,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+348,ODFL,Old Dominion,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+349,OMC,Omnicom Group,Communication Services,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+350,ON,ON Semiconductor,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+351,OKE,Oneok,Energy,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+352,ORCL,Oracle Corporation,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+353,OTIS,Otis Worldwide,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+354,PCAR,Paccar,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+355,PKG,Packaging Corporation of America,Materials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+356,PLTR,Palantir Technologies,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+357,PANW,Palo Alto Networks,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+358,PH,Parker Hannifin,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+359,PAYX,Paychex,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+360,PYPL,PayPal,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+361,PNR,Pentair,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+362,PEP,PepsiCo,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+363,PFE,Pfizer,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+364,PCG,PG&E Corporation,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+365,PM,Philip Morris International,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+366,PSX,Phillips 66,Energy,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+367,PNW,Pinnacle West Capital,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+368,PNC,PNC Financial Services,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+369,PPG,PPG Industries,Materials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+370,PPL,PPL Corporation,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+371,PFG,Principal Financial Group,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+372,PG,Procter & Gamble,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+373,PGR,Progressive Corporation,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+374,PLD,Prologis,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+375,PRU,Prudential Financial,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+376,PEG,Public Service Enterprise Group,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+377,PTC,PTC Inc.,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+378,PSA,Public Storage,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+379,PHM,PulteGroup,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+380,PWR,Quanta Services,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+381,QCOM,Qualcomm,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+382,DGX,Quest Diagnostics,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+383,Q,Qnity Electronics,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+384,RL,Ralph Lauren Corporation,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+385,RJF,Raymond James Financial,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+386,RDDT,Reddit,Communication Services,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+387,RTX,RTX Corporation,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+388,O,Realty Income,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+389,REG,Regency Centers,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+390,REGN,Regeneron Pharmaceuticals,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+391,RF,Regions Financial Corporation,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+392,RSG,Republic Services,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+393,RMD,ResMed,,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+394,RVTY,Revvity,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+395,HOOD,Robinhood Markets,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+396,ROK,Rockwell Automation,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+397,ROL,"Rollins, Inc.",Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+398,ROP,Roper Technologies,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+399,ROST,Ross Stores,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+400,RCL,Royal Caribbean Group,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+401,SPGI,S&P Global,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+402,CRM,Salesforce,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+403,SNDK,Sandisk,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+404,SBAC,SBA Communications,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+405,SLB,Schlumberger,Energy,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+406,STX,Seagate Technology,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+407,SRE,Sempra,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+408,NOW,ServiceNow,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+409,SHW,Sherwin-Williams,Materials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+410,SPG,Simon Property Group,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+411,SKYD,Skydance Corporation,Communication Services,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+412,SWKS,Skyworks Solutions,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+413,SJM,J.M. Smucker Company (The),Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+414,SW,Smurfit Westrock,Materials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+415,SNA,Snap-on,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+416,SOLV,Solventum,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+417,SO,Southern Company,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+418,LUV,Southwest Airlines,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+419,SWK,Stanley Black & Decker,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+420,SBUX,Starbucks,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+421,STT,State Street Corporation,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+422,STLD,Steel Dynamics,Materials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+423,STE,Steris,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+424,SYK,Stryker Corporation,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+425,SMCI,Supermicro,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+426,SYF,Synchrony Financial,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+427,SNPS,Synopsys,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+428,SYY,Sysco,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+429,TMUS,T-Mobile US,Communication Services,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+430,TROW,T. Rowe Price,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+431,TTWO,Take-Two Interactive,Communication Services,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+432,TPR,"Tapestry, Inc.",Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+433,TRGP,Targa Resources,Energy,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+434,TGT,Target Corporation,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+435,TEL,TE Connectivity,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+436,TDY,Teledyne Technologies,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+437,TER,Teradyne,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+438,TSLA,"Tesla, Inc.",Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+439,TXN,Texas Instruments,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+440,TPL,Texas Pacific Land Corporation,Energy,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+441,TXT,Textron,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+442,TMO,Thermo Fisher Scientific,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+443,TJX,TJX Companies,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+444,TKO,TKO Group Holdings,Communication Services,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+445,TSCO,Tractor Supply,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+446,TT,Trane Technologies,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+447,TDG,TransDigm Group,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+448,TRV,Travelers Companies (The),Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+449,TRMB,Trimble Inc.,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+450,TFC,Truist Financial,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+451,TWLO,Twilio,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+452,TYL,Tyler Technologies,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+453,TSN,Tyson Foods,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+454,USB,U.S. Bancorp,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+455,UBER,Uber,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+456,UDR,"UDR, Inc.",Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+457,ULTA,Ulta Beauty,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+458,UNP,Union Pacific Corporation,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+459,UAL,United Airlines Holdings,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+460,UPS,United Parcel Service,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+461,URI,United Rentals,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+462,UNH,UnitedHealth Group,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+463,UHS,Universal Health Services,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+464,VLO,Valero Energy,Energy,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+465,VEEV,Veeva Systems,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+466,VTR,Ventas,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+467,VLTO,Veralto,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+468,VRSN,Verisign,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+469,VRSK,Verisk Analytics,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+470,VZ,Verizon,Communication Services,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+471,VRTX,Vertex Pharmaceuticals,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+472,VRT,Vertiv,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+473,VTRS,Viatris,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+474,VICI,Vici Properties,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+475,V,Visa Inc.,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+476,VST,Vistra Corp.,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+477,VMRK,Vivmark Residential,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+478,VMC,Vulcan Materials Company,Materials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+479,VYLR,Vylor,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+480,WRB,W. R. Berkley Corporation,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+481,GWW,W. W. Grainger,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+482,WAB,Wabtec,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+483,WMT,Walmart,Consumer Staples,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+484,DIS,Walt Disney Company (The),Communication Services,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+485,WM,Waste Management,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+486,WAT,Waters Corporation,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+487,WEC,WEC Energy Group,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+488,WFC,Wells Fargo,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+489,WELL,Welltower,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+490,WST,West Pharmaceutical Services,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+491,WDC,Western Digital,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+492,WY,Weyerhaeuser,Real Estate,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+493,WSM,"Williams-Sonoma, Inc.",Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+494,WMB,Williams Companies,Energy,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+495,WTW,Willis Towers Watson,Financials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+496,WDAY,"Workday, Inc.",Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+497,WYNN,Wynn Resorts,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+498,XEL,Xcel Energy,Utilities,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+499,XYL,Xylem Inc.,Industrials,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+500,YUM,Yum! Brands,Consumer Discretionary,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+501,ZBRA,Zebra Technologies,Information Technology,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+502,ZBH,Zimmer Biomet,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+503,ZTS,Zoetis,Health Care,2026-10-13 조회,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
