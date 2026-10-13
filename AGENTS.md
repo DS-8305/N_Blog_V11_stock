@@ -7,3 +7,5 @@ Do not substitute fixtures for live financial evidence. Missing evidence, permis
 Run pnpm test, pnpm typecheck and pnpm build. Record live checks separately from offline tests.
 
 New jobs use stock_sources_five_v1: five original-ratio source_screenshot assets. Keep financial verification separate from capture. Require current capture, image and manuscript reviews. Missing imageLayout means legacy_cards; preserve saved fingerprints.
+Captions must never include the word '촬영'; use natural date or '기준' notation instead (e.g. '2026.10.13 기준' or '2026.10.13').
+Titles must prioritize high-CTR hook patterns: combine the core catalyst/issue (e.g. 상한가, 급등 배경, 시총 5조 달러 돌파), strong curiosity triggers (e.g. 진짜 이유, 왜 불기둥 뿜었을까, 사업 구조 팩트 점검), and the company/brand identity.
