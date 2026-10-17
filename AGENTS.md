@@ -13,6 +13,6 @@ Capture standards:
 캡처 원칙: 2, 3, 5번 등 금융 데이터 이미지는 영역을 타이트하게 자르지 말고 무조건 크게 넉넉하게 캡처할 것! 사용자가 발행 전 에디터에서 수동으로 자를 수 있으므로, 이미지가 작거나 윗부분/아랫부분이 잘리는 것보다 상하 여백과 탭 바를 충분히 포함하여 큼직하게 전체 카드가 다 나오는 것이 최우선. 특히 모바일 차트는 상단 플로팅 헤더 오버랩을 반드시 회피할 것!
 Captions must never include the word '촬영'; use natural date or '기준' notation instead (e.g. '2026.10.13 기준' or '2026.10.13').
 Paragraph formatting: 1) '자료 출처' 문구 시작 전 앞 단락에서 한 줄 줄바꿈(빈 줄) 추가, 2) 해시태그 시작 전 앞 단락에서 한 줄 줄바꿈(빈 줄) 추가.
-Titles must follow docs/high-ctr-title-rules.md: prioritize hybrid high-CTR hook patterns (core search keyword + verified numbers/catalyst + curiosity trigger). For price swings, prefer intuitive drop/gain metrics (e.g. '전고 대비 50% 이상 하락', '고점 대비 반토막', '3배 급등') over raw price range spans.
-Title focus: Prioritize '실적 역설형' (e.g. 영업익 1,000억 찍고도 주가 반토막 난 진짜 이유) and '밸류에이션형' (e.g. 고점 대비 반토막 후 PER 5배·배당 4% 진입, 바닥일까?). Leave playful memes/metaphors for user manual customization.
+Titles must follow docs/high-ctr-title-rules.md: prioritize hybrid high-CTR hook patterns (core search keyword + 1 single standout verified metric/catalyst + curiosity trigger). Never cram multiple metrics (e.g. 매출·영업익·PER·PBR) into a single title—pick only 1 core metric so the sentence reads naturally (e.g. '영업익 3조 찍은 GS 주가, 지금이 바닥일까?'). For price swings, prefer intuitive drop/gain metrics (e.g. '전고 대비 50% 이상 하락', '고점 대비 반토막', '3배 급등') over raw price range spans.
+Title focus: Prioritize '실적 역설형' (e.g. 영업익 3조 찍은 GS 주가, 지금이 바닥일까? / 영업익 1,000억 찍고도 OO 주가 반토막 난 진짜 이유) and '밸류에이션형' (e.g. PER 4배 진입한 OO 주가, 지금이 바닥일까?). Leave playful memes/metaphors for user manual customization.
 
