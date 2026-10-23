@@ -8,11 +8,12 @@ import {validateFacts,factValues,type FactDocument} from '../domain/stock.js';
 import {issue,type ValidationReport} from '../domain/validation.js';
 import {sourcesText} from './createPost.js';
 import {fingerprint} from './fingerprint.js';
+import {checkTitleDiversity,legacySevenTitlesAllowed} from './titleDiversity.js';
 import {captionFor} from '../render/captions.js';
 export function validatePost(request:JobRequest,facts:FactDocument,assets:AssetManifest,post:PostDocument):ValidationReport {
  const reader=request.conditions.editorialStyle==='reader_focused_v2',errors=validateFacts(request,facts),add=(code:string,path='')=>errors.push(issue(code,path)),validIds=new Set(factValues(facts).map(v=>v.factId)),supported=reader?readerClaims(facts):supportedClaimTexts(facts);
  if(post.jobId!==request.jobId||assets.jobId!==request.jobId)add('post_job_mismatch');
- if(post.titleCandidates.length!==7||new Set(post.titleCandidates).size!==7||!post.titleCandidates.includes(post.selectedTitle))add('seven_titles_required');
+ if(!legacySevenTitlesAllowed(request.asOfDate,post.titleCandidates,post.selectedTitle))for(const code of checkTitleDiversity(post.titleCandidates,post.selectedTitle))add(code);
  const tagCount=reader?10:5;if(post.tags.length!==tagCount||new Set(post.tags).size!==tagCount||post.tags.some(t=>!t||/[\s#]/.test(t)))add(reader?'ten_tags_required':'five_tags_required');
  const headings=post.blocks.flatMap(b=>b.kind==='heading'?[b.text]:[]),images=post.blocks.filter(b=>b.kind==='image');
  if(fingerprint(headings)!==fingerprint(sectionHeadings)||images.length!==5||new Set(images.map(b=>b.assetId)).size!==5)add('five_section_layout_required');

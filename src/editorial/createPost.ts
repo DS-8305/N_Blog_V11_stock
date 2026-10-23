@@ -1,4 +1,5 @@
 import {createSourcePost} from './sourcePost.js';
+import {FIVE_TITLES_SINCE} from './titleDiversity.js';
 import {createReaderPost} from './readerFocused.js';
 import {supportedClaimTexts} from './factPresentation.js';
 import {rolesFor,imageLayoutFor} from '../domain/imageLayout.js';
@@ -29,7 +30,7 @@ export function createPost(request:JobRequest,f:FactDocument,assets:AssetManifes
   blocks.push({kind:'heading',text:sectionHeadings[i]!,factIds:[],claims:[]},{kind:'image',assetId:asset.assetId},{kind:'caption',assetId:asset.assetId,text:asset.caption,factIds:asset.factIds},{kind:'paragraph',text:paragraphs[i]!,factIds,claims});
  }
  blocks.push({kind:'source',text:sourcesText(f)});
- const titleCandidates=[`${name}, 어떤 회사인지 처음부터 알아봐요`,`${name} 주식 읽기, 사업부터 기업 규모까지`,`${name} 기업 소개, 주요 사업을 살펴봐요`,`${name} 시가총액과 가격 범위를 읽는 법`,`${name} 주식이 궁금할 때 확인할 자료`,`${name} 사업 구조와 앞으로 볼 점`,`${name} 기업 규모와 시장 흐름 살펴보기`];
+ const titleCandidates=[`${name}, 어떤 회사인지 처음부터 알아봐요`,`${name} 주식 읽기, 사업부터 기업 규모까지`,`${name} 기업 소개, 주요 사업을 살펴봐요`,`${name} 시가총액과 가격 범위를 읽는 법`,`${name} 주식이 궁금할 때 확인할 자료`,`${name} 사업 구조와 앞으로 볼 점`,`${name} 기업 규모와 시장 흐름 살펴보기`].slice(0,request.asOfDate<FIVE_TITLES_SINCE?7:5);
  const safeTag=name.replace(/[^\p{L}\p{N}]/gu,'');
  const post:PostDocument={schemaVersion:1,jobId:request.jobId,titleCandidates,selectedTitle:titleCandidates[0]!,titleFactIds:[],blocks,tags:[safeTag,'기업소개','주식공부','시가총액','사업분석']};
  // Educational context is added only if needed; source claims are never padded or shortened.
