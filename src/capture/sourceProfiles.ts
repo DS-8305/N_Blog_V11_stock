@@ -1,7 +1,7 @@
 import type {Page,Locator} from 'playwright';
 import type {CaptureHints,CaptureSourceHint} from '../domain/capture.js';
 import {sourceUrl} from '../domain/validation.js';
-import {assertRegionReady,inspectRegion} from './readiness.js';
+import {assertRegionReady,inspectRegion,resolveExtentArea} from './readiness.js';
 type Identity=CaptureHints['identity'];
 const includes=(text:string,label:string)=>text.replace(/\s+/g,'').includes(label.replace(/\s+/g,''));
 export function assertSourceIdentity(text:string,identity:Identity):void{
@@ -13,6 +13,7 @@ export function assertSourceUrl(url:string,hint:CaptureSourceHint,identity:Ident
  if(hint.profile==='naverpay'){
   if(!identity.market.startsWith('KRX:'))throw Error('needs_user:naverpay_market_not_supported');
   if(frame){if(u.hostname!=='navercomp.wisereport.co.kr'||u.searchParams.get('cmp_cd')!==identity.ticker)throw Error('needs_user:capture_frame_ticker_mismatch');}
+  else if(u.hostname==='navercomp.wisereport.co.kr'){if(!u.pathname.startsWith('/v2/company/')||u.searchParams.get('cmp_cd')!==identity.ticker)throw Error('needs_user:capture_parent_ticker_mismatch');}
   else if(u.hostname!=='stock.naver.com'||!u.pathname.startsWith(`/domestic/stock/${identity.ticker}/`))throw Error('needs_user:capture_parent_ticker_mismatch');
  }
  if(!frame&&url!==hint.url)throw Error('needs_user:capture_redirect_requires_review');
@@ -37,7 +38,10 @@ export async function resolveSourceRegion(page:Page,hint:CaptureSourceHint,ident
   });
   const before=await controlState();if(!includes(before.text,hint.selection.expectedText))throw Error('needs_user:capture_selection_ambiguous');if(!before.checked)await selected.click();const after=await controlState();if(!after.checked||!includes(after.text,hint.selection.expectedText))throw Error('needs_user:capture_selection_unconfirmed');
  }
- const region=scope.locator(hint.selector);if(await region.count()!==1)throw Error('needs_user:capture_region_ambiguous');await region.waitFor({state:'visible'});const regionText=await region.innerText();
+ const region=scope.locator(hint.selector);if(await region.count()!==1)throw Error('needs_user:capture_region_ambiguous');await region.waitFor({state:'visible'});const regionText=await readRegionText(region,hint);
  const labels=[...hint.requiredRegionLabels,...[hint.sourceDateText,hint.unitText,hint.marketScope,hint.priceBasis,hint.selectedPeriod].filter((s):s is string=>s!==null)];if(labels.some(l=>!includes(regionText,l)))throw Error('needs_user:capture_metadata_not_visible');
+ if((hint.forbiddenRegionLabels??[]).some(l=>includes(regionText,l)))throw Error('needs_user:capture_forbidden_label_present');
  return {region,...(frameOwner?{frameOwner,frameUrl}:{}),identityText,regionText};
 }
+/** Text the capture actually contains: the extent area when configured, otherwise the whole region (legacy). */
+export async function readRegionText(region:Locator,hint:Pick<CaptureSourceHint,'extent'>):Promise<string>{if(!hint.extent)return region.innerText();const {area}=await resolveExtentArea(region,hint.extent);return (await inspectRegion(region,area)).text;}
