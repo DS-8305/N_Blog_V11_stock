@@ -13,5 +13,12 @@ export function compileDraft(jobPath:string,bundle:Bundle,report:ValidationRepor
  const events:EditorEvent[]=[{type:'setTitle',text:bundle.post.selectedTitle}],body:string[]=[],captions:string[]=[],sources:string[]=[],imageAssetIds:string[]=[];
  for(const b of bundle.post.blocks){if(b.kind==='image'){const a=bundle.assets.assets.find(a=>a.assetId===b.assetId)!;events.push({type:'insertImage',assetId:a.assetId,relativePath:a.relativePath,absolutePath:join(jobPath,a.relativePath)});imageAssetIds.push(a.assetId);continue;}body.push(b.text);if(b.kind==='caption'&&bundle.request.conditions.imageCaptionPlacement==='native')events.push({type:'setImageCaption',text:b.text,assetId:b.assetId});else events.push({type:b.kind==='heading'?'insertQuote':'typeText',text:b.text,...(b.kind==='heading'?{bold:true}:{})});if(b.kind==='caption')captions.push(b.text);if(b.kind==='source')sources.push(b.text);}
  const tags=bundle.post.tags.map(t=>'#'+t).join(' ');events.push({type:'typeText',text:tags});body.push(tags);
+ if(bundle.request.asOfDate>='2026-10-25'&&bundle.post.titleCandidates?.length===5){
+  events.push({type:'typeText',text:''});
+  const candidates=bundle.post.titleCandidates.map(t=>t===bundle.post.selectedTitle&&!t.includes('(선택)')?t.replace(/^(\[[^\]]+\]\s*)?/, (m, g1)=>(g1?g1+'(선택) ':'(선택) ')):t);
+  const titleBlock=['고CTR 제목 후보 5선',...candidates];
+  events.push({type:'typeText',text:titleBlock.join('\n')});
+  body.push('',...titleBlock);
+ }
  return {jobId:bundle.request.jobId,jobPath,title:bundle.post.selectedTitle,fingerprint:report.fingerprint,events,assets:bundle.assets.assets,expected:{bodyText:body.join('\n'),imageAssetIds,captions,sources}};
 }
